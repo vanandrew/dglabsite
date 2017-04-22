@@ -4,9 +4,10 @@
 {% block head %}
 <!-- Check if came from sibling pages -->
 <script src="{% static 'dlabsite/js/sibling.js' %}"></script>
-<script>sibling('{% url 'dlabsite:people' %}','{% url 'dlabsite:research' %}',
-'{% url 'dlabsite:publications' %}','{% url 'dlabsite:resources' %}',
-'{% url 'dlabsite:opportunities' %}','{% url 'dlabsite:contact' %}')</script>
+<script>sibling(['{% url 'dlabsite:people' %}','{% url 'dlabsite:research' %}',
+'{% url 'dlabsite:publications' %}','{% url 'dlabsite:data' %}',
+'{% url 'dlabsite:software' %}','{% url 'dlabsite:wiki' %}','{% url 'dlabsite:participate' %}',
+'{% url 'dlabsite:careers' %}','{% url 'dlabsite:contact' %}'])</script>
 {% endblock %}
 
 {% block home %}
@@ -135,15 +136,5 @@ class="active"
  		duration: 1000,
  	   	viewFactor: 0.5,
   	});
-</script>
-<!-- navbar scripts -->
-<script src="{% static 'dlabsite/js/navbar.js' %}"></script>
-<script>
-	navbar_click('#people','{% url 'dlabsite:people' %}','body>div,body>section');
-	navbar_click('#research','{% url 'dlabsite:research' %}','body>div,body>section');
-	navbar_click('#publications','{% url 'dlabsite:publications' %}','body>div,body>section');
-	navbar_click('#resources','{% url 'dlabsite:resources' %}','body>div,body>section');
-	navbar_click('#opportunities','{% url 'dlabsite:opportunities' %}','body>div,body>section');
-	navbar_click('#contact','{% url 'dlabsite:contact' %}','body>div,body>section');
 </script>
 {% endblock %}

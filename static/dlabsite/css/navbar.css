@@ -33,7 +33,7 @@
 .navbar-default .navbar-nav>li>a {
 	background-color: rgba(0,0,0,0);
     color: rgba(0,0,0,1);
-	font-size: 16px;
+	font-size: 14px;
 	margin-left: 2px;
 	margin-right: 2px;
 	cursor: pointer;
@@ -42,13 +42,16 @@
 	background-color: rgba(0,0,0,0);
 	border-bottom: 1px solid rgba(0,0,0,1);
 	color: rgba(0,0,0,1);
-	cursor: auto;
+	cursor: pointer;
 }
 .navbar-nav>li>a:hover {
 	border-bottom: 1px solid rgba(128,128,128,1);
 }
 /* Navbar Collapse */ 
-@media only screen and (max-width : 812px) {
+@media only screen and (max-width : 930px) {
+	.navbar-default {
+	    background-color: rgba(255,255,255,0);
+	}
 	.navbar-default .navbar-nav>.active>a {
 		border-bottom: 1px solid rgba(0,0,0,0);
 	}

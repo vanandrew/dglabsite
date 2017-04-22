@@ -24,13 +24,25 @@ def publications_page(request):
     query_publications = publication.objects.all().order_by('idx')
     return render(request, 'dlabsite/publications.html', {'query_publications': query_publications})
 
-# resources
-def resources_page(request):
-    return render(request, 'dlabsite/resources.html')
+# data
+def data_page(request):
+    return render(request, 'dlabsite/data.html')
 
-# opportunities
-def opportunities_page(request):
-    return render(request, 'dlabsite/opportunities.html')
+# software
+def software_page(request):
+    return render(request, 'dlabsite/software.html')
+    
+# wiki
+def wiki_page(request):
+    return render(request, 'dlabsite/wiki.html')
+
+# participate
+def participate_page(request):
+    return render(request, 'dlabsite/participate.html')
+
+# careers
+def careers_page(request):
+    return render(request, 'dlabsite/careers.html')
 
 # contact
 def contact_page(request):

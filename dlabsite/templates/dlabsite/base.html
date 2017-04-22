@@ -65,10 +65,19 @@
 							<a id="publications">publications</a>
 						</li>
 						<li {% block resources %}{% endblock %}>
-							<a id="resources">resources</a>
+							<a id="data">data</a>
 						</li>
-						<li {% block opportunities %}{% endblock %}>
-							<a id="opportunities">opportunities</a>
+						<li {% block software %}{% endblock %}>
+							<a id="software">software</a>
+						</li>
+						<li {% block wiki %}{% endblock %}>
+							<a id="wiki">wiki</a>
+						</li>
+						<li {% block participate %}{% endblock %}>
+							<a id="participate">participate</a>
+						</li>
+						<li {% block careers %}{% endblock %}>
+							<a id="careers">careers</a>
 						</li>
 						<li {% block contact %}{% endblock %}>
 							<a id="contact">contact</a>
@@ -87,6 +96,20 @@
 		<!-- Latest compiled and minified JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
 			integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		</script>
+		<!-- navbar scripts -->
+		<script src="{% static 'dlabsite/js/navbar.js' %}"></script>
+		<script>
+			navbar_click('#home','{% url 'dlabsite:homepage' %}','body>div,body>section');
+			navbar_click('#people','{% url 'dlabsite:people' %}','body>div,body>section');
+			navbar_click('#research','{% url 'dlabsite:research' %}','body>div,body>section');
+			navbar_click('#publications','{% url 'dlabsite:publications' %}','body>div,body>section');
+			navbar_click('#data','{% url 'dlabsite:data' %}','body>div,body>section');
+			navbar_click('#software','{% url 'dlabsite:software' %}','body>div,body>section');
+			navbar_click('#wiki','{% url 'dlabsite:wiki' %}','body>div,body>section');
+			navbar_click('#participate','{% url 'dlabsite:participate' %}','body>div,body>section');
+			navbar_click('#careers','{% url 'dlabsite:careers' %}','body>div,body>section');
+			navbar_click('#contact','{% url 'dlabsite:contact' %}','body>div,body>section');
 		</script>
 		{% block scripts %}
 		{% endblock %}
