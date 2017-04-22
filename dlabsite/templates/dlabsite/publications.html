@@ -1,0 +1,55 @@
+{% extends "dlabsite/base.html" %}
+{% load staticfiles %}
+
+{% block publications %}
+class="active"
+{% endblock %}
+
+{% block content %}
+<div class="container container-nav-clear animated fadeIn">
+	<section class="section">
+		<div class="row">
+			<div class="col-lg-8 col-lg-offset-2 text-center">
+				<h2>See our work</h2>
+				<hr>
+				<p></p>
+			</div>
+		</div>
+	</section>
+</div>
+<div class="container">
+	{% for pub in query_publications %}
+	<div class="row pub-row">
+		<div class="col-xs-10 col-xs-offset-1">
+			<p>[{{ pub.idx }}] {{ pub.container }}{% for pub_link in pub.publication_link_set.all %} [<a href="{{ pub_link.link }}">Link {{ forloop.counter }}</a>]{% endfor %}</p>
+		</div>
+	</div>
+	{% endfor %}
+</div>
+{% endblock %}
+
+{% block scripts %}
+<!-- Scroll Reveal-->
+<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+<script>
+	//Setup scroll reveal
+	sr = ScrollReveal();
+
+	// scroll reveal
+	sr.reveal('.pub-row',{
+  		reset: true,
+		duration: 1000,
+		viewFactor: 0.3,
+	});
+</script>
+<script src="{% static 'dlabsite/js/navbar.js' %}"></script>
+<script>
+	navbar_click('#home','{% url 'dlabsite:homepage' %}','body>div,body>section');
+	navbar_click('#people','{% url 'dlabsite:people' %}','body>div,body>section');
+	navbar_click('#research','{% url 'dlabsite:research' %}','body>div,body>section');
+	//navbar_click('#publications','{% url 'dlabsite:publications' %}','body>div,body>section');
+	navbar_click('#resources','{% url 'dlabsite:resources' %}','body>div,body>section');
+	navbar_click('#opportunities','{% url 'dlabsite:opportunities' %}','body>div,body>section');
+	navbar_click('#contact','{% url 'dlabsite:contact' %}','body>div,body>section');
+</script>
+{% endblock %}

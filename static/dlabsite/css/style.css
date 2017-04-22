@@ -1,0 +1,138 @@
+html, body {
+	height: 100%;
+}
+body {
+	font-family: 'Lato', sans-serif !important;
+	font-weight: 300;
+}
+.container-fluid {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.container-nav-clear {
+	padding-top: 80px;
+}
+.row {
+    margin-right: 0px;
+    margin-left: 0px;
+}
+.modal {
+  text-align: center;
+  padding: 0!important;
+}
+
+.modal:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -4px;
+}
+
+.modal-dialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+}
+.modal-header {
+    border-bottom: 0px solid #000000;
+}
+.modal-content {
+    border-radius: 0px;
+}
+.particle {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	display: block;
+	-webkit-animation-delay: 500ms;
+	        animation-delay: 500ms;
+}
+.title-arrow {
+	font-size: 35px;
+	color: rgba(0,0,0,1);
+	width: 50px;
+	line-height: 48px;
+	border-radius: 50%;
+	height: 50px;
+	border: 1px solid rgba(0,0,0,1);
+	display: block;
+	margin: 0 auto;
+	position: absolute;
+	bottom: 20px;
+	left: 50%;
+	z-index: 2;
+	-webkit-transform: translateX(-50%);
+	transform: translateX(-50%);
+	opacity: .9;
+	text-align: center;
+	-webkit-animation-delay: 1500ms;
+	        animation-delay: 1500ms;
+}
+.title-arrow:hover {
+	background-color: rgba(224,224,224,1);
+	cursor: pointer;
+}
+.title-arrow>i {
+	width: 100%;
+}
+.title-content {
+	position: absolute;
+	z-index: 2;
+	top: 45%;
+	text-align: center;
+	-webkit-animation-delay: 1500ms;
+	        animation-delay: 1500ms;
+}
+.symbol-container {
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+}
+.symbol {
+	width: 80px;
+}
+.title {
+	width: 80%;
+	background: rgba(255,255,255,0.25);
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+.section-header {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+.section-block {
+	position: absolute;
+	width: 100%;
+	display: block;
+	-webkit-animation-delay: 2000ms;
+	        animation-delay: 2000ms;
+}
+.section {
+	padding: 100px 0;
+}
+.grid-item {
+	padding-left: 0px;
+	padding-right: 0px;
+}
+.lab-mem-portrait {
+	margin: auto;
+	width: 225px;
+	height: 300px;
+	padding: 10px 10px;
+	-webkit-transition: filter 200ms linear;
+			transition: filter 200ms linear;
+}
+.lab-mem-portrait:hover {
+	filter: brightness(50%);
+	cursor: pointer;
+}
+.pub-row {
+	margin-bottom: 30px;
+}
+/*.pub-row p > a:hover {
+	cursor: pointer;
+}*/

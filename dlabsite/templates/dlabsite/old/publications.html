@@ -1,0 +1,20 @@
+{% extends "dlabsite/base.html" %}
+{% load staticfiles %}
+
+{% block publications %}
+class="active"
+{% endblock %}
+
+{% block content %}
+<div class="container">
+	<div class="col-md-10 col-md-offset-1">
+		<br>
+		<br>
+		<br>
+		<h2>Publications</h2>
+		{% for i in query_publications reversed %}
+		<p>[{{ i.pub_index }}] {{ i.pub_container }}</p>
+		{% endfor %}
+	</div>
+</div>
+{% endblock %}

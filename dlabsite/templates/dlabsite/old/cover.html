@@ -1,0 +1,61 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+		<!--meta name="description" content=""-->
+		<!--meta name="author" content=""-->
+		<!--link rel="icon" href="../../favicon.ico"-->
+		<title>Dosenbach Lab</title>
+
+		<!-- Orbital Font -->
+		<link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+
+		<!-- Animate.css -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+
+		<!-- Bootstrap -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 		
+			integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+		<!-- Optional theme -->
+		<!--link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+			integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"-->
+		
+		<!-- Custom CSS for coverpage -->
+		<link rel="stylesheet" href="{% static 'dlabsite/css/style.css' %}">
+	</head>
+
+	<body>
+		<div id="particles-js" class="animated fadeIn" style="z-index: 100;"></div>
+		<div class="container-fluid container-table transparent-container">
+			<div class="row vertical-center-row">
+				<div class="col-md-12 animated bounceInDown" style="background: rgba(105,137,152,0.8); z-index: 200; border-radius: 6px;">
+					<img class="text-center" src="{% static 'dlabsite/img/DLVertColorRvrs2Logo.png' %}" width="400px">
+					<p class="text-center">
+						<a href="{% url 'dlabsite:homepage' %}" class="btn btn-primary btn-lg btn-default">enter</a>
+					</p>
+				</div>
+			</div>
+		</div>
+		
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+			integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		<!-- Include particles.js script -->
+		<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+		<!-- Load the particles settings -->
+		<script>
+			particlesJS.load('particles-js', '{% static 'dlabsite/js/particles.json' %}', function() {
+				console.log('callback - particles.js config loaded');
+			});
+		</script>
+	</body>
+</html>

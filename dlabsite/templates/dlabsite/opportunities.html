@@ -1,0 +1,32 @@
+{% extends "dlabsite/base.html" %}
+{% load staticfiles %}
+
+{% block opportunities %}
+class="active"
+{% endblock %}
+
+{% block content %}
+<div class="container container-nav-clear animated fadeIn">
+	<section class="section">
+		<div class="row">
+			<div class="col-lg-8 col-lg-offset-2 text-center">
+				<h2>Opportunities</h2>
+				<hr>
+			</div>
+		</div>
+	</section>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'dlabsite/js/navbar.js' %}"></script>
+<script>
+	navbar_click('#home','{% url 'dlabsite:homepage' %}','body>div,body>section');
+	navbar_click('#people','{% url 'dlabsite:people' %}','body>div,body>section');
+	navbar_click('#research','{% url 'dlabsite:research' %}','body>div,body>section');
+	navbar_click('#publications','{% url 'dlabsite:publications' %}','body>div,body>section');
+	navbar_click('#resources','{% url 'dlabsite:resources' %}','body>div,body>section');
+	//navbar_click('#opportunities','{% url 'dlabsite:opportunities' %}','body>div,body>section');
+	navbar_click('#contact','{% url 'dlabsite:contact' %}','body>div,body>section');
+</script>
+{% endblock %}
