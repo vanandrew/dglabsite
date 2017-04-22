@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponseRedirect
 from .models import news_item, lab_member, research, publication
 
 # homepage
@@ -34,7 +34,7 @@ def software_page(request):
     
 # wiki
 def wiki_page(request):
-    return render(request, 'dlabsite/wiki.html')
+    return HttpResponseRedirect('http://www.wikipedia.org')
 
 # participate
 def participate_page(request):

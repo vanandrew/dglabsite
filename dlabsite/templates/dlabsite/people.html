@@ -27,6 +27,7 @@ class="active"
 			{% else %}
 			<img class="lab-mem-portrait" src="{% static 'dlabsite/img/photonotavailable.gif' %}" data-toggle="modal" data-target="#person_{{ forloop.counter0 }}">
 			{% endif %}
+			<p class="text-center">{{ person.last_name }}, {{ person.first_name }} </p>
 		</div>
 		{% endfor %}
 	</div>
@@ -112,7 +113,7 @@ class="active"
 
 	  	// scroll reveal
 		$('.grid').show();
-  		sr.reveal('.grid-item .lab-mem-portrait',{
+  		sr.reveal('.grid-item .lab-mem-portrait, .grid-item>p',{
   			duration: 1000,
   			viewFactor: 0.3
 		}, 100);
