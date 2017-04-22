@@ -1,221 +1,149 @@
+{% extends "dlabsite/base.html" %}
 {% load staticfiles %}
 
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-		<!--meta name="description" content=""-->
-		<!--meta name="author" content=""-->
-		<!--link rel="icon" href="../../favicon.ico"-->
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Dosenbach Lab</title>
+{% block head %}
+<!-- Check if came from sibling pages -->
+<script src="{% static 'dlabsite/js/sibling.js' %}"></script>
+<script>sibling('{% url 'dlabsite:people' %}','{% url 'dlabsite:research' %}',
+'{% url 'dlabsite:publications' %}','{% url 'dlabsite:resources' %}',
+'{% url 'dlabsite:opportunities' %}','{% url 'dlabsite:contact' %}')</script>
+{% endblock %}
 
-		<!-- Lato Font -->
-		<link href="https://fonts.googleapis.com/css?family=Lato:100,300,400" rel="stylesheet">
+{% block home %}
+class="active"
+{% endblock %}
 
-		<!-- Animate.css -->
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-
-		<!-- Bootstrap -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-			integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-		<!-- Font Awesome -->
-		<script src="https://use.fontawesome.com/e1a3eeb374.js"></script>
-
-		<!-- Reset Position of the page on refresh -->
-		<script>window.onload=function(){setTimeout(function(){scrollTo(0,0);},100);}</script>
-
-		<!-- Check if came from sibling pages -->
-		<script src="{% static 'dlabsite/js/sibling.js' %}"></script>
-		<script>sibling('{% url 'dlabsite:people' %}','{% url 'dlabsite:research' %}',
-		'{% url 'dlabsite:publications' %}','{% url 'dlabsite:resources' %}',
-		'{% url 'dlabsite:opportunities' %}','{% url 'dlabsite:contact' %}')</script>
-
-		<!-- CSS -->
-		<link rel="stylesheet" href="{% static 'dlabsite/css/navbar.css' %}">
-		<link rel="stylesheet" href="{% static 'dlabsite/css/style.css' %}">
-	</head>
-
-	<body>
-		<nav class="navbar navbar-default navbar-fixed-top animated fadeIn">
-			<div class="container-fluid">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<a class="navbar-brand symbol-container">
-						<img class="symbol" src="{% static 'dlabsite/img/DLSymLogo.png' %}">
-					</a>
-				</div>
-				<div id="navbar" class="navbar-collapse collapse">
-					<ul class="nav navbar-nav navbar-right">
-						<li class="active">
-							<a>home</a>
-						</li>
-						<li>
-							<a id="people">lab members</a>
-						</li>
-						<li>
-							<a id="research">research</a>
-						</li>
-						<li>
-							<a id="publications">publications</a>
-						</li>
-						<li>
-							<a id="resources">resources</a>
-						</li>
-						<li>
-							<a id="opportunities">opportunities</a>
-						</li>
-						<li>
-							<a id="contact">contact</a>
-						</li>
-					</ul>
-				</div><!--/.nav-collapse -->
+{% block content %}
+<div class="title-content animated fadeIn">
+	<img class="title" src="{% static 'dlabsite/img/DLTextLogo.png' %}">
+</div>
+<div class="title-arrow animated fadeIn">
+	<i class="fa fa-angle-down" aria-hidden="true"></i>
+</div>
+<div class="container-fluid section-header">
+	<div id="particles-js" class="animated fadeIn particle"></div>
+</div>
+<div class="container-fluid section-block animated fadeIn">
+	<section class="section">
+		<div class="row">
+			<div class="col-lg-8 col-lg-offset-2 text-center">
+				<h2>Test</h2>
+				<hr>
+				<p>Test Test Test</p>
 			</div>
-		</nav>
-
-		<div class="title-content animated fadeIn">
-			<img class="title" src="{% static 'dlabsite/img/DLTextLogo.png' %}">
 		</div>
-		<div class="title-arrow animated fadeIn">
-			<i class="fa fa-angle-down" aria-hidden="true"></i>
+	</section>
+	<section class="section">
+		<div class="row">
+			<div class="col-lg-8 col-lg-offset-2 text-center">
+				<h2>Test</h2>
+				<hr>
+				<p>Test Test Test</p>
+			</div>
 		</div>
-		<div class="container-fluid section-header">
-			<div id="particles-js" class="animated fadeIn particle"></div>
+	</section>
+	<section class="section">
+		<div class="row">
+			<div class="col-lg-8 col-lg-offset-2 text-center">
+				<h2>Test</h2>
+				<hr>
+				<p>Test Test Test</p>
+			</div>
 		</div>
-		<div class="container-fluid section-block animated fadeIn">
-			<section class="section">
-				<div class="row">
-					<div class="col-lg-8 col-lg-offset-2 text-center">
-						<h2>Test</h2>
-						<hr>
-						<p>Test Test Test</p>
-					</div>
-				</div>
-			</section>
-			<section class="section">
-				<div class="row">
-					<div class="col-lg-8 col-lg-offset-2 text-center">
-						<h2>Test</h2>
-						<hr>
-						<p>Test Test Test</p>
-					</div>
-				</div>
-			</section>
-			<section class="section">
-				<div class="row">
-					<div class="col-lg-8 col-lg-offset-2 text-center">
-						<h2>Test</h2>
-						<hr>
-						<p>Test Test Test</p>
-					</div>
-				</div>
-			</section>
-			<section class="section">
-				<div class="row">
-					<div class="col-lg-8 col-lg-offset-2 text-center">
-						<h2>Test</h2>
-						<hr>
-						<p>Test Test Test</p>
-					</div>
-				</div>
-			</section>
-			<section class="section">
-				<div class="row">
-					<div class="col-lg-8 col-lg-offset-2 text-center">
-						<h2>Test</h2>
-						<hr>
-						<p>Test Test Test</p>
-					</div>
-				</div>
-			</section>
-			<section class="section">
-				<div class="row">
-					<div class="col-lg-8 col-lg-offset-2 text-center">
-						<h2>Test</h2>
-						<hr>
-						<p>Test Test Test</p>
-					</div>
-				</div>
-			</section>
+	</section>
+	<section class="section">
+		<div class="row">
+			<div class="col-lg-8 col-lg-offset-2 text-center">
+				<h2>Test</h2>
+				<hr>
+				<p>Test Test Test</p>
+			</div>
 		</div>
+	</section>
+	<section class="section">
+		<div class="row">
+			<div class="col-lg-8 col-lg-offset-2 text-center">
+				<h2>Test</h2>
+				<hr>
+				<p>Test Test Test</p>
+			</div>
+		</div>
+	</section>
+	<section class="section">
+		<div class="row">
+			<div class="col-lg-8 col-lg-offset-2 text-center">
+				<h2>Test</h2>
+				<hr>
+				<p>Test Test Test</p>
+			</div>
+		</div>
+	</section>
+</div>
+{% endblock %}
 
-		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-		<!-- Include all compiled plugins (below), or include individual files as needed -->
-		<!-- Latest compiled and minified JavaScript -->
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-			integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-		<!-- Include particles.js script -->
-		<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-		<!-- Load the particles settings -->
-		<script>
-			particlesJS.load('particles-js', '{% static 'dlabsite/js/particles_black.json' %}');
+{% block scripts %}
+<!-- Include particles.js script -->
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<!-- Load the particles settings -->
+<script>
+	particlesJS.load('particles-js', '{% static 'dlabsite/js/particles_black.json' %}');
 
-			// set the position of the section block relative to the particles-js canvas
-			$('.section-block').css({
-				"top": $('#particles-js').height(),
-				//"min-height": $('#particles-js').height()
-			});
-		</script>
-		<!-- scroll scripts -->
-		<script>
-			// scroll down the page on click of arrow
-			$(".title-arrow").click(function() {
-				$('html,body').animate({
-					scrollTop: $(".section-block").offset().top},1500);
-			});
+	// set the position of the section block relative to the particles-js canvas
+	$('.section-block').css({
+		"top": $('#particles-js').height(),
+		//"min-height": $('#particles-js').height()
+	});
+</script>
+<!-- scroll scripts -->
+<script>
+	// scroll down the page on click of arrow
+	$(".title-arrow").click(function() {
+		$('html,body').animate({
+			scrollTop: $(".section-block").offset().top},1500);
+	});
 
-			// check scroll
-			function checkScroll() {
-			    var startY = 60;
+	// check scroll
+	function checkScroll() {
+	    var startY = 60;
 
-			    if($(window).scrollTop() > startY) {
-					// delete the animate css here
-					$(".navbar,.animated").removeClass('animated fadeIn')
-					$(".navbar").fadeOut();
-			    }
-				else {
-					$(".navbar").fadeIn();
-			    }
-			}
+	    if($(window).scrollTop() > startY) {
+			// delete the animate css here
+			$(".navbar,.animated").removeClass('animated fadeIn')
+			$(".navbar").fadeOut();
+	    }
+		else {
+			$(".navbar").fadeIn();
+	    }
+	}
 
-			// only check scroll if navbar exists
-			if($(".navbar").length > 0) {
-			    $(window).on("scroll load resize", function() {
-			        checkScroll();
-			    });
-			}
-		</script>
-		<!-- Scroll Reveal-->
-		<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
-		<script>
-			//Setup scroll reveal
-			window.sr = ScrollReveal();
-			
-	  		// scroll reveal
-	  		sr.reveal('div>section',{
-	  			reset: true,
-	  	 		duration: 1000,
-	  	 	   	viewFactor: 0.5,
-	  	  	});
-		</script>
-		<!-- navbar scripts -->
-		<script src="{% static 'dlabsite/js/navbar.js' %}"></script>
-		<script>
-			navbar_click('#people','{% url 'dlabsite:people' %}','body>div,body>section');
-			navbar_click('#research','{% url 'dlabsite:research' %}','body>div,body>section');
-			navbar_click('#publications','{% url 'dlabsite:publications' %}','body>div,body>section');
-			navbar_click('#resources','{% url 'dlabsite:resources' %}','body>div,body>section');
-			navbar_click('#opportunities','{% url 'dlabsite:opportunities' %}','body>div,body>section');
-			navbar_click('#contact','{% url 'dlabsite:contact' %}','body>div,body>section');
-		</script>
-	</body>
-</html>
+	// only check scroll if navbar exists
+	if($(".navbar").length > 0) {
+	    $(window).on("scroll load resize", function() {
+	        checkScroll();
+	    });
+	}
+</script>
+<!-- Scroll Reveal-->
+<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+<script>
+	//Setup scroll reveal
+	window.sr = ScrollReveal();
+	
+	// scroll reveal
+	sr.reveal('div>section',{
+		reset: true,
+ 		duration: 1000,
+ 	   	viewFactor: 0.5,
+  	});
+</script>
+<!-- navbar scripts -->
+<script src="{% static 'dlabsite/js/navbar.js' %}"></script>
+<script>
+	navbar_click('#people','{% url 'dlabsite:people' %}','body>div,body>section');
+	navbar_click('#research','{% url 'dlabsite:research' %}','body>div,body>section');
+	navbar_click('#publications','{% url 'dlabsite:publications' %}','body>div,body>section');
+	navbar_click('#resources','{% url 'dlabsite:resources' %}','body>div,body>section');
+	navbar_click('#opportunities','{% url 'dlabsite:opportunities' %}','body>div,body>section');
+	navbar_click('#contact','{% url 'dlabsite:contact' %}','body>div,body>section');
+</script>
+{% endblock %}

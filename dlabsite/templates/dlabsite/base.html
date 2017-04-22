@@ -26,13 +26,10 @@
 		<script src="https://use.fontawesome.com/e1a3eeb374.js"></script>
 		
 		<!-- Reset Position of the page on refresh -->
-		<script>
-			window.onload = function() {
-				setTimeout (function () {
-					scrollTo(0,0);
-				}, 100);
-			}
-		</script>
+		<script>window.onload=function(){setTimeout(function(){scrollTo(0,0);},100);}</script>
+		
+		{% block head %}
+		{% endblock %}
 		
 		<!-- CSS -->
 		<link rel="stylesheet" href="{% static 'dlabsite/css/navbar.css' %}">
@@ -55,7 +52,7 @@
 				</div>
 				<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav navbar-right">
-						<li>
+						<li {% block home %}{% endblock %}>
 							<a id="home">home</a>
 						</li>
 						<li {% block people %}{% endblock %}>
