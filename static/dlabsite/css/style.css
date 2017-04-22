@@ -137,6 +137,10 @@ body {
 .pub-row {
 	margin-bottom: 30px;
 }
-/*.pub-row p > a:hover {
-	cursor: pointer;
-}*/
+.group-img {
+	width: 750px;
+	height: 500px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
