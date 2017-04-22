@@ -17,10 +17,28 @@ class="active"
 		</div>
 	</section>
 </div>
-<div class="container">
+<div id="current" class="container">
+	<div class="row">
+		<div class="col-lg-12 text-center">
+			<p><a>Current Members</a>/<a>Past Members</a></p>
+		</div>
+	</div>
 	<div class="grid">
 		<div class="grid-sizer col-xs-1 col-sm-1 col-md-1"></div>
-		{% for person in query_lab_members %}
+		{% for person in current_members %}
+		<div class="grid-item col-xs-6 col-sm-4 col-md-3 animated fadeIn">
+			{% if person.photo.url != '' %}
+			<img class="lab-mem-portrait" src="{{person.photo.url}}" data-toggle="modal" data-target="#person_{{ forloop.counter0 }}">
+			{% else %}
+			<img class="lab-mem-portrait" src="{% static 'dlabsite/img/photonotavailable.gif' %}" data-toggle="modal" data-target="#person_{{ forloop.counter0 }}">
+			{% endif %}
+			<p class="text-center">{{ person.last_name }}, {{ person.first_name }} </p>
+		</div>
+		{% endfor %}
+	</div>
+	<div class="grid" style="display: none;">
+		<div class="grid-sizer col-xs-1 col-sm-1 col-md-1"></div>
+		{% for person in past_members %}
 		<div class="grid-item col-xs-6 col-sm-4 col-md-3 animated fadeIn">
 			{% if person.photo.url != '' %}
 			<img class="lab-mem-portrait" src="{{person.photo.url}}" data-toggle="modal" data-target="#person_{{ forloop.counter0 }}">
@@ -33,7 +51,7 @@ class="active"
 	</div>
 </div>
 
-{% for person in query_lab_members %}
+{% for person in current_members %}
 <div class="modal fade" id="person_{{ forloop.counter0 }}" aria-labelledby="labmemberdescription">
 	<div class="modal-dialog modal-lg" role="document">
 		<div class="modal-content">

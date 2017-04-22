@@ -1,18 +1,17 @@
 from django.shortcuts import render
 from django.http import JsonResponse, HttpResponseRedirect
-from .models import news_item, lab_member, research, publication
+from .models import lab_member, research, publication
 
 # homepage
 def home_page(request):
-    # get all news items
-    query_news_items = news_item.objects.all().order_by('date')
-    return render(request, 'dlabsite/index.html', {'query_news_items': query_news_items})
+    return render(request, 'dlabsite/index.html')
 
 # lab member page
 def people_page(request):
     # Get all lab members
-    query_lab_members = lab_member.objects.all().order_by('last_name')
-    return render(request, 'dlabsite/people.html', {'query_lab_members': query_lab_members})
+    current_members = lab_member.objects.filter(alumni=False).order_by('last_name')
+    past_members = lab_member.objects.filter(alumni=True).order_by('last_name')
+    return render(request, 'dlabsite/people.html', {'current_members': current_members, 'past_members': past_members,})
 
 # research
 def research_page(request):

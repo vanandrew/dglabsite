@@ -2,47 +2,6 @@ from __future__ import unicode_literals
 import os
 from django.db import models
 
-# Create class for smart quotes
-class smart_quote(models.Model):
-    class Meta:
-        verbose_name = "Smart Quote"
-
-    # quote
-    quote = models.CharField(
-        max_length = 1000,
-        verbose_name = "Quote"
-    )
-
-    # Return the name of the model
-    def __unicode__(self):
-        return self.quote
-
-# Create class for news item
-class news_item(models.Model):
-    class Meta:
-        verbose_name = "News Item"
-
-    # title of news item
-    title = models.CharField(
-        max_length = 350,
-        verbose_name = "Title"
-    )
-
-    # date of news item
-    date = models.DateField(
-        verbose_name = "Date"
-    )
-
-    # URL for news item
-    URL = models.CharField(
-        max_length = 350,
-        verbose_name = "URL"
-    )
-
-    # Return the name of the model
-    def __unicode__(self):
-        return self.title
-
 # Create class for lab member
 class lab_member(models.Model):
     class Meta:
@@ -86,6 +45,10 @@ class lab_member(models.Model):
 
     blurb = models.TextField(
         verbose_name = "Blurb"
+    )
+
+    alumni = models.BooleanField(
+        verbose_name = "Lab Alumni"
     )
 
     # Photo of lab member

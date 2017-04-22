@@ -1,19 +1,5 @@
 from django.contrib import admin
-from .models import news_item, lab_member, research, publication, research_image, publication_link
-
-class newsitemadmin(admin.ModelAdmin):
-    ordering = ('date',)
-    fieldsets = (
-        ('News Item', {
-            'fields': (
-                'title',
-                'date',
-                'URL',
-            )
-        }),
-    )
-    search_fields = ('title','date',)
-    save_as = True
+from .models import lab_member, research, publication, research_image, publication_link
 
 # admin for lab member model
 class labmemberadmin(admin.ModelAdmin):
@@ -27,6 +13,7 @@ class labmemberadmin(admin.ModelAdmin):
                 'phone',
                 'title',
                 'blurb',
+                'alumni',
                 'photo',
             )
         }),
@@ -76,7 +63,6 @@ class publicationadmin(admin.ModelAdmin):
     save_as = True
 
 # dlabsite models
-admin.site.register(news_item, newsitemadmin)
 admin.site.register(lab_member, labmemberadmin)
 admin.site.register(research, researchadmin)
 admin.site.register(publication, publicationadmin)
