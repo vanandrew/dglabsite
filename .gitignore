@@ -1,1 +1,4 @@
-*.sqlite
+*.sqlite3
+dlabsite/migrations
+dlabsite/media
+media
