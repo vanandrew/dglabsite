@@ -19,7 +19,7 @@ def research_page(request):
 
 # publications
 def publications_page(request):
-    publications = publication.objects.all().order_by('idx')
+    publications = publication.objects.all().order_by('date')
     return render(request, 'dlabsite/publications.html', {'publications': publications})
 
 # data

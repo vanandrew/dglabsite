@@ -131,16 +131,15 @@ class="active"
 	
 	// execute on typing in textbox
 	$('#search').keyup(function () {
+		getcheckboxstatus();
 		if ($(this).val()) {
-			getcheckboxstatus();
-			$('.grid-item').Elefilt($(this).val(),['fname','lname'])
-			$grid.masonry('layout'); // reset the layout
+			$('.grid-item:visible').Elefilt($(this).val(),['fname','lname'])
 		}
 		else {
-			$('.grid-item').show();
-			getcheckboxstatus();
-			$grid.masonry('layout'); // reset the layout
+			$('.grid-item:visible').show();
+			
 		}
+		$grid.masonry('layout'); // reset the layout
 	});
 	
 	// Setup the grid

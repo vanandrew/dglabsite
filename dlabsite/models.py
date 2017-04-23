@@ -1,5 +1,5 @@
 from __future__ import unicode_literals
-import os
+import os, datetime
 from django.db import models
 
 # Create class for lab member
@@ -118,7 +118,6 @@ class research_image(models.Model):
 class publication(models.Model):
     class Meta:
         verbose_name = "Publication"
-        #get_latest_by = "pub_title"
 
     # Publication Title
     title = models.CharField(
@@ -129,18 +128,18 @@ class publication(models.Model):
 
     # Publication Container
     container = models.TextField(
+        default = datetime.date.today,
         verbose_name = "Citation"
     )
 
-    # Publication Index
-    idx = models.IntegerField(
-        unique = True,
-        verbose_name = "Index Number"
+    # Publication Date
+    date = models. DateField(
+        verbose_name = "Date Published"
     )
 
     # Return the name of the model
     def __unicode__(self):
-        return self.title + ' - ' + str(self.idx)
+        return self.title
 
 # Create class for publication links
 class publication_link(models.Model):

@@ -15,14 +15,23 @@
 	      	stored_data = $(this).data();
 	        // Access each data tag based on input data_array
 			var match = 0; //Track # of matches in each field
+			var omnistring = "";
 	        for (var i = 0; i < data_array.length; i++) {
-	        	if (stored_data[data_array[i]].match(RegExp(match_string,'i'))) {
-	          		match++;
-	        	}
+				// Create a long string out of each field
+	        	omnistring = omnistring + " " + stored_data[data_array[i]];
 	        }
-			if (match > 0) {
+			// Search long string using parsed match string
+			parsed_string = match_string.split(" ");
+			for (var i = 0; i < parsed_string.length; i++) {
+				if (omnistring.match(RegExp(parsed_string[i],'i'))) {
+					match++
+				}
+			}
+			// show if matched both strings
+			if (match == parsed_string.length) {
 				$(this).show();
 			}
+			// hide otherwise
 			else {
 				$(this).hide();
 			}

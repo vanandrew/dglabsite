@@ -48,18 +48,18 @@ class researchadmin(admin.ModelAdmin):
 
 # admin for publication model
 class publicationadmin(admin.ModelAdmin):
-    ordering = ('-idx',)
+    ordering = ('-date',)
     fieldsets = (
         ('Publications', {
             'fields': (
                 'title',
                 'container',
-                'idx',
+                'date',
             )
         }),
     )
     inlines = (publicationlinkinline,)
-    search_fields = ('title','container','idx',)
+    search_fields = ('title','container','date',)
     save_as = True
 
 # dlabsite models
