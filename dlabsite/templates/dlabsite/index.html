@@ -2,6 +2,8 @@
 {% load staticfiles %}
 
 {% block head %}
+<!-- Reset Position of the page on refresh -->
+<script>window.onload = function() {setTimeout (function () {scrollTo(0,0);}, 100);}</script>
 <!-- Check if came from sibling pages -->
 <script src="{% static 'dlabsite/js/sibling.js' %}"></script>
 <script>sibling(['{% url 'dlabsite:people' %}','{% url 'dlabsite:research' %}',
@@ -95,34 +97,13 @@ class="active"
 		//"min-height": $('#particles-js').height()
 	});
 </script>
-<!-- scroll scripts -->
+<!-- scroll arrow -->
 <script>
 	// scroll down the page on click of arrow
 	$(".title-arrow").click(function() {
 		$('html,body').animate({
 			scrollTop: $(".section-block").offset().top},1500);
 	});
-
-	// check scroll
-	function checkScroll() {
-	    var startY = 60;
-
-	    if($(window).scrollTop() > startY) {
-			// delete the animate css here
-			$(".navbar,.animated").removeClass('animated fadeIn')
-			$(".navbar").fadeOut();
-	    }
-		else {
-			$(".navbar").fadeIn();
-	    }
-	}
-
-	// only check scroll if navbar exists
-	if($(".navbar").length > 0) {
-	    $(window).on("scroll load resize", function() {
-	        checkScroll();
-	    });
-	}
 </script>
 <!-- Scroll Reveal-->
 <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>

@@ -18,16 +18,26 @@ class="active"
 		</div>
 	</section>
 </div>
-<div id="current" class="container">
-	<div class="row">
-		<div class="col-lg-12 text-center">
-			<p><a>Current Members</a>/<a>Past Members</a></p>
+<div class="container" style="min-height: 700px;">
+	<div class="row" style="margin-bottom: 20px;">
+		<div class="col-lg-2 col-lg-offset-1">
+			<div class="checkbox">
+				<label><input id="current" type="checkbox" checked>Current Members</label>
+			</div>
+		</div>
+		<div class="col-lg-2">
+			<div class="checkbox">
+				<label><input id="past" type="checkbox">Past Members</label>
+			</div>
+		</div>
+		<div class="col-lg-3 col-lg-offset-2 text-center">
+			<input id="search" type="text" class="form-control" placeholder="Search Name">
 		</div>
 	</div>
 	<div class="grid">
 		<div class="grid-sizer col-xs-1 col-sm-1 col-md-1"></div>
-		{% for person in current_members %}
-		<div class="grid-item col-xs-6 col-sm-4 col-md-3 animated fadeIn">
+		{% for person in members %}
+		<div class="grid-item col-xs-6 col-sm-4 col-md-3 animated fadeIn" data-alumni="{{ person.alumni }}" data-fname="{{ person.first_name }}" data-lname="{{ person.last_name }}">
 			{% if person.photo.url != '' %}
 			<img class="lab-mem-portrait" src="{{person.photo.url}}" data-toggle="modal" data-target="#person_{{ forloop.counter0 }}">
 			{% else %}
@@ -39,7 +49,7 @@ class="active"
 	</div>
 </div>
 
-{% for person in current_members %}
+{% for person in members %}
 <div class="modal fade" id="person_{{ forloop.counter0 }}" aria-labelledby="labmemberdescription">
 	<div class="modal-dialog modal-lg" role="document">
 		<div class="modal-content">
@@ -82,26 +92,57 @@ class="active"
 <script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
 <!-- Masonry -->
 <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+<script src="{% static 'dlabsite/js/elefilt.js' %}"></script>
 <script>
-	// check scroll
-	function checkScroll() {
-	    var startY = 60;
-
-	    if($(window).scrollTop() > startY) {
-			$(".navbar").fadeOut();
-	    }
+	// Get checkbox status
+	function getcheckboxstatus() {
+		// Check each grid item alumni data tag
+		$('.grid-item').each(function() {
+			eledata = $(this).data();
+			// if member is NOT alumni
+			if (eledata['alumni'] == 'False') {
+				// Current members checkbox active
+				if ($('#current').prop('checked')) {
+					$(this).show();
+				}
+				else {
+					$(this).hide();
+				}
+			}
+			// if member is alumni
+			if (eledata['alumni'] == 'True') {
+				// Past members checkbox active
+				if ($('#past').prop('checked')) {
+					$(this).show();
+				}
+				else {
+					$(this).hide();
+				}
+			}
+		});
+	}
+	
+	// execute on click of checkboxes
+	getcheckboxstatus(); // execute on load
+	$('.checkbox input').click(function (){
+		getcheckboxstatus();
+		$grid.masonry('layout'); // reset the layout
+	});
+	
+	// execute on typing in textbox
+	$('#search').keyup(function () {
+		if ($(this).val()) {
+			getcheckboxstatus();
+			$('.grid-item').Elefilt($(this).val(),['fname','lname'])
+			$grid.masonry('layout'); // reset the layout
+		}
 		else {
-			$(".navbar").fadeIn();
-	    }
-	}
-
-	// only check scroll if navbar exists
-	if($(".navbar").length > 0) {
-	    $(window).on("scroll load resize", function() {
-	        checkScroll();
-	    });
-	}
-
+			$('.grid-item').show();
+			getcheckboxstatus();
+			$grid.masonry('layout'); // reset the layout
+		}
+	});
+	
 	// Setup the grid
 	var $grid = $('.grid').masonry({
 		itemSelector: '.grid-item',

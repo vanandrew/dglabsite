@@ -9,9 +9,8 @@ def home_page(request):
 # lab member page
 def people_page(request):
     # Get all lab members
-    current_members = lab_member.objects.filter(alumni=False).order_by('last_name')
-    past_members = lab_member.objects.filter(alumni=True).order_by('last_name')
-    return render(request, 'dlabsite/people.html', {'current_members': current_members, 'past_members': past_members,})
+    members = lab_member.objects.all().order_by('last_name')
+    return render(request, 'dlabsite/people.html', {'members': members})
 
 # research
 def research_page(request):
@@ -20,8 +19,8 @@ def research_page(request):
 
 # publications
 def publications_page(request):
-    query_publications = publication.objects.all().order_by('idx')
-    return render(request, 'dlabsite/publications.html', {'query_publications': query_publications})
+    publications = publication.objects.all().order_by('idx')
+    return render(request, 'dlabsite/publications.html', {'publications': publications})
 
 # data
 def data_page(request):
