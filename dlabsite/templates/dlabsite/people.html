@@ -11,7 +11,7 @@ class="active"
 		<div class="row">
 			<div class="col-lg-8 col-lg-offset-2 text-center">
 				<h2>Meet the team</h2>
-				<img class="group-img" src="{% static 'dlabsite/img/groupphoto.jpg' %}">
+				<img class="group-img img-responsive" src="{% static 'dlabsite/img/groupphoto.jpg' %}">
 				<hr>
 				<p>Click on a portrait for a full profile.</p>
 			</div>
@@ -37,7 +37,7 @@ class="active"
 	<div class="grid">
 		<div class="grid-sizer col-xs-1 col-sm-1 col-md-1"></div>
 		{% for person in members %}
-		<div class="grid-item col-xs-6 col-sm-4 col-md-3 animated fadeIn" data-alumni="{{ person.alumni }}" data-fname="{{ person.first_name }}" data-lname="{{ person.last_name }}">
+		<div class="grid-item col-xs-12 col-sm-4 col-md-3 animated fadeIn" data-alumni="{{ person.alumni }}" data-fname="{{ person.first_name }}" data-lname="{{ person.last_name }}">
 			{% if person.photo.url != '' %}
 			<img class="lab-mem-portrait" src="{{person.photo.url}}" data-toggle="modal" data-target="#person_{{ forloop.counter0 }}">
 			{% else %}
