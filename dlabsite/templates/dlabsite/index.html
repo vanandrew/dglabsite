@@ -90,12 +90,15 @@ class="active"
 <!-- Load the particles settings -->
 <script>
 	particlesJS.load('particles-js', '{% static 'dlabsite/js/particles_black.json' %}');
-
 	// set the position of the section block relative to the particles-js canvas
-	$('.section-block').css({
-		"top": $('#particles-js').height(),
-		//"min-height": $('#particles-js').height()
-	});
+	function setpos () {
+		$('.section-block').css({
+			"top": $('#particles-js').height(),
+		});
+	}
+	// execute on load and resize
+    $(document).ready(setpos);
+    $(window).resize(setpos);
 </script>
 <!-- scroll arrow -->
 <script>
