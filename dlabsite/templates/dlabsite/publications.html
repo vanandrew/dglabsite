@@ -20,6 +20,9 @@ class="active"
 <div class="container">
 	{% for pub in publications %}
 	<div class="row pub-row">
+		{% if pub.date.year == 2017 %}
+		<h4>2017</h4>
+		{% endif %}
 		<div class="col-xs-10 col-xs-offset-1">
 			<p>{{ pub.container }}{% for pub_link in pub.publication_link_set.all %} [<a href="{{ pub_link.link }}">Link {{ forloop.counter }}</a>]{% endfor %}</p>
 		</div>
