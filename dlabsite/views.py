@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import JsonResponse, HttpResponseRedirect
 from .models import lab_member, research, publication
+from datetime import datetime
 
 # homepage
 def home_page(request):
@@ -20,7 +21,8 @@ def research_page(request):
 # publications
 def publications_page(request):
     publications = publication.objects.all().order_by('date')
-    return render(request, 'dlabsite/publications.html', {'publications': publications})
+    lastfiveyears = [datetime.now().year,datetime.now().year-1,datetime.now().year-2,datetime.now().year-3,datetime.now().year-4]
+    return render(request, 'dlabsite/publications.html', {'publications': publications,'lastfiveyears': lastfiveyears})
 
 # data
 def data_page(request):
