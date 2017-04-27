@@ -20,7 +20,7 @@ def research_page(request):
 
 # publications
 def publications_page(request):
-    publications = publication.objects.all().order_by('date')
+    publications = publication.objects.all().order_by('-date')
     lastfiveyears = [datetime.now().year,datetime.now().year-1,datetime.now().year-2,datetime.now().year-3,datetime.now().year-4]
     return render(request, 'dlabsite/publications.html', {'publications': publications,'lastfiveyears': lastfiveyears})
 
@@ -31,7 +31,7 @@ def data_page(request):
 # software
 def software_page(request):
     return render(request, 'dlabsite/software.html')
-    
+
 # wiki
 def wiki_page(request):
     return HttpResponseRedirect('http://www.wikipedia.org')
