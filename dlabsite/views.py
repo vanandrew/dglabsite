@@ -34,7 +34,7 @@ def software_page(request):
 
 # wiki
 def wiki_page(request):
-    return HttpResponseRedirect('http://www.wikipedia.org')
+    return HttpResponseRedirect('http://10.20.94.224:778/')
 
 # participate
 def participate_page(request):
