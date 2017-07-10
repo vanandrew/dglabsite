@@ -20,67 +20,11 @@ class="active"
 <div class="title-content animated fadeIn">
 	<img class="title" src="{% static 'dlabsite/img/DLTextLogo.png' %}">
 </div>
-<div class="title-arrow animated fadeIn">
+<!--div class="title-arrow animated fadeIn">
 	<i class="fa fa-angle-down" aria-hidden="true"></i>
-</div>
+</div-->
 <div class="container-fluid section-header">
 	<div id="particles-js" class="animated fadeIn particle"></div>
-</div>
-<div class="container-fluid section-block animated fadeIn">
-	<section class="section">
-		<div class="row">
-			<div class="col-lg-8 col-lg-offset-2 text-center">
-				<h2>Test</h2>
-				<hr>
-				<p>Test Test Test</p>
-			</div>
-		</div>
-	</section>
-	<section class="section">
-		<div class="row">
-			<div class="col-lg-8 col-lg-offset-2 text-center">
-				<h2>Test</h2>
-				<hr>
-				<p>Test Test Test</p>
-			</div>
-		</div>
-	</section>
-	<section class="section">
-		<div class="row">
-			<div class="col-lg-8 col-lg-offset-2 text-center">
-				<h2>Test</h2>
-				<hr>
-				<p>Test Test Test</p>
-			</div>
-		</div>
-	</section>
-	<section class="section">
-		<div class="row">
-			<div class="col-lg-8 col-lg-offset-2 text-center">
-				<h2>Test</h2>
-				<hr>
-				<p>Test Test Test</p>
-			</div>
-		</div>
-	</section>
-	<section class="section">
-		<div class="row">
-			<div class="col-lg-8 col-lg-offset-2 text-center">
-				<h2>Test</h2>
-				<hr>
-				<p>Test Test Test</p>
-			</div>
-		</div>
-	</section>
-	<section class="section">
-		<div class="row">
-			<div class="col-lg-8 col-lg-offset-2 text-center">
-				<h2>Test</h2>
-				<hr>
-				<p>Test Test Test</p>
-			</div>
-		</div>
-	</section>
 </div>
 {% endblock %}
 
@@ -101,24 +45,24 @@ class="active"
     $(window).resize(setpos);
 </script>
 <!-- scroll arrow -->
-<script>
+<!--script>
 	// scroll down the page on click of arrow
 	$(".title-arrow").click(function() {
 		$('html,body').animate({
 			scrollTop: $(".section-block").offset().top},1500);
 	});
-</script>
+</script-->
 <!-- Scroll Reveal-->
-<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+<!--script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
 <script>
 	//Setup scroll reveal
 	window.sr = ScrollReveal();
-	
+
 	// scroll reveal
 	sr.reveal('div>section',{
 		reset: true,
  		duration: 1000,
  	   	viewFactor: 0.5,
   	});
-</script>
+</script-->
 {% endblock %}
