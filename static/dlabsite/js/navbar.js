@@ -1,6 +1,7 @@
 // Navbar click and fade
 function navbar_click (selection,URL,selector){
-	$(selection).click(function(){
+	$(selection).click(function(e){
+		e.preventDefault();
 		$(selector).removeClass('animated');
 		$(selector).fadeOut();
 		setTimeout(function(){window.location.assign(URL)},600);

@@ -19,15 +19,15 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 
 		<!-- Bootstrap -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 		
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
 			integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-		
+
 		<!-- Font Awesome -->
 		<script src="https://use.fontawesome.com/e1a3eeb374.js"></script>
-		
+
 		{% block head %}
 		{% endblock %}
-		
+
 		<!-- CSS -->
 		<link rel="stylesheet" href="{% static 'dlabsite/css/navbar.css' %}">
 		<link rel="stylesheet" href="{% static 'dlabsite/css/style.css' %}">
@@ -50,43 +50,43 @@
 				<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav navbar-right">
 						<li {% block home %}{% endblock %}>
-							<a id="home">home</a>
+							<a href="{% url 'dlabsite:homepage' %}" id="home">home</a>
 						</li>
 						<li {% block people %}{% endblock %}>
-							<a id="people">lab members</a>
+							<a href="{% url 'dlabsite:people' %}" id="people">lab members</a>
 						</li>
 						<li {% block research %}{% endblock %}>
-							<a id="research">research</a>
+							<a href="{% url 'dlabsite:research' %}" id="research">research</a>
 						</li>
 						<li {% block publications %}{% endblock %}>
-							<a id="publications">publications</a>
+							<a href="{% url 'dlabsite:publications' %}" id="publications">publications</a>
 						</li>
 						<li {% block resources %}{% endblock %}>
-							<a id="data">data</a>
+							<a href="{% url 'dlabsite:data' %}" id="data">data</a>
 						</li>
 						<li {% block software %}{% endblock %}>
-							<a id="software">software</a>
+							<a href="{% url 'dlabsite:software' %}" id="software">software</a>
 						</li>
 						<li {% block wiki %}{% endblock %}>
-							<a id="wiki">wiki</a>
+							<a href="{% url 'dlabsite:wiki' %}" id="wiki">wiki</a>
 						</li>
 						<li {% block participate %}{% endblock %}>
-							<a id="participate">participate</a>
+							<a href="{% url 'dlabsite:participate' %}" id="participate">participate</a>
 						</li>
 						<li {% block careers %}{% endblock %}>
-							<a id="careers">careers</a>
+							<a href="{% url 'dlabsite:careers' %}" id="careers">careers</a>
 						</li>
 						<li {% block contact %}{% endblock %}>
-							<a id="contact">contact</a>
+							<a href="{% url 'dlabsite:contact' %}" id="contact">contact</a>
 						</li>
 					</ul>
 				</div><!--/.nav-collapse -->
 			</div>
 		</nav>
-		
+
 		{% block content %}
 		{% endblock %}
-		
+
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 		<!-- Include all compiled plugins (below), or include individual files as needed -->
