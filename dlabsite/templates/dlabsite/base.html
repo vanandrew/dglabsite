@@ -87,6 +87,16 @@
 		{% block content %}
 		{% endblock %}
 
+		{% if request.get_full_path != '/' %}
+		<div class="container" style="margin-top: 50px; margin-bottom: 25px;">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2 text-center">
+					<p>This site was designed and coded by <a href="mailto:vanandrew@wustl.edu">Andrew Van</a>.
+						View the source code<a href="https://github.com/vanandrew/dglabsite"> here</a>.</p>
+			</div>
+		</div>
+		{% endif %}
+
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 		<!-- Include all compiled plugins (below), or include individual files as needed -->
