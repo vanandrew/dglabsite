@@ -68,9 +68,15 @@ class="active"
 					<div class="col-xs-8">
 						<div class="row">
 							<h4 class="modal-title" id="myModalLabel">{{ person.first_name }} {{ person.last_name }}</h4>
+							{% if person.title != '' %}
 							<h5>Title: {{ person.title }}</h5>
+							{% endif %}
+							{% if person.email != '' %}
 							<h5>Email: {{ person.email }}</h5>
+							{% endif %}
+							{% if person.phone != '' %}
 							<h5>Phone: {{ person.phone }}</h5>
+							{% endif %}
 							{% autoescape off %}
 								{{ person.blurb }}
 							{% endautoescape %}
@@ -121,14 +127,14 @@ class="active"
 			}
 		});
 	}
-	
+
 	// execute on click of checkboxes
 	getcheckboxstatus(); // execute on load
 	$('.checkbox input').click(function (){
 		getcheckboxstatus();
 		$grid.masonry('layout'); // reset the layout
 	});
-	
+
 	// execute on typing in textbox
 	$('#search').keyup(function () {
 		getcheckboxstatus();
@@ -137,11 +143,11 @@ class="active"
 		}
 		else {
 			$('.grid-item:visible').show();
-			
+
 		}
 		$grid.masonry('layout'); // reset the layout
 	});
-	
+
 	// Setup the grid
 	var $grid = $('.grid').masonry({
 		itemSelector: '.grid-item',

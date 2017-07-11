@@ -12,9 +12,23 @@ class="active"
 			<div class="col-lg-8 col-lg-offset-2 text-center">
 				<h2>Careers</h2>
 				<hr>
+				<p>Interested in working with us? Apply below.</p>
 			</div>
 		</div>
 	</section>
+</div>
+<div class="container animated fadeIn" style="min-height: 700px;">
+	{% for job in jobpostings %}
+	<div class="row">
+		<div class="panel panel-default">
+			<div class="panel-heading"><h5>{{job.title}}</h5></div>
+			<div class="panel-body">
+				<p>{{job.description}}</p>
+				<a class="btn btn-primary" href="https://jobs.wustl.edu/psc/APPLHRMS/EMPLOYEE/HRMS/c/HRS_HRAM.HRS_APP_SCHJOB.GBL?Page=HRS_APP_JBPST&REL_ACTION=Yes&SiteId=1&HRS_JO_PST_TYPE=E&HRS_JOB_OPENING_ID={{job.jobid}}&HRS_JO_PST_SEQ=1">Apply Here</a>
+			</div>
+		</div>
+	</div>
+	{% endfor %}
 </div>
 {% endblock %}
 

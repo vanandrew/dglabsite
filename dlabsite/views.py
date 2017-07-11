@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import JsonResponse, HttpResponseRedirect
-from .models import lab_member, research, publication
+from .models import lab_member, research, publication, job_listing
 from datetime import datetime
 
 # homepage
@@ -42,7 +42,8 @@ def participate_page(request):
 
 # careers
 def careers_page(request):
-    return render(request, 'dlabsite/careers.html')
+    jobpostings = job_listing.objects.all().order_by('-post_date')
+    return render(request, 'dlabsite/careers.html', {'jobpostings': jobpostings})
 
 # contact
 def contact_page(request):

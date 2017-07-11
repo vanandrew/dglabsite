@@ -43,10 +43,12 @@ class lab_member(models.Model):
         verbose_name = "Title"
     )
 
+    # Field for member blurb
     blurb = models.TextField(
         verbose_name = "Blurb"
     )
 
+    # Define if member is alumni
     alumni = models.BooleanField(
         verbose_name = "Lab Alumni"
     )
@@ -149,7 +151,7 @@ class publication_link(models.Model):
     # Create foreign key to publication class
     publication = models.ForeignKey(
         publication,
-        on_delete=models.CASCADE,
+        on_delete = models.CASCADE,
         verbose_name = "Publication Link"
     )
 
@@ -163,3 +165,33 @@ class publication_link(models.Model):
     # Return the name of the model
     def __unicode__(self):
         return self.link
+
+# Create class for job listing
+class job_listing(models.Model):
+    class Meta:
+        verbose_name = "Job Listing"
+
+    # Create Title for Job listing
+    title = models.CharField(
+        max_length = 350,
+        verbose_name = "Title"
+    )
+
+    # Create Job post date
+    post_date = models.DateField(
+        auto_now_add = True,
+        verbose_name = "Posting Date"
+    )
+
+    # Create Job ID
+    jobid = models.IntegerField(
+        verbose_name = "Job ID#"
+    )
+
+    # Create Job Description
+    description = models.TextField(
+        verbose_name = "Description"
+    )
+
+    def __unicode__(self):
+        return self.title + " - " + str(self.jobid)
