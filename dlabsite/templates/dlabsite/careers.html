@@ -17,10 +17,10 @@ class="active"
 		</div>
 	</section>
 </div>
-<div class="container animated fadeIn" style="min-height: 700px;">
+<div class="container" style="min-height: 700px;">
 	{% for job in jobpostings %}
 	<div class="row">
-		<div class="panel panel-default">
+		<div class="panel panel-default" style="visibility: hidden;">
 			<div class="panel-heading"><h5>{{job.title}}</h5></div>
 			<div class="panel-body">
 				{% autoescape off %}
@@ -35,4 +35,17 @@ class="active"
 {% endblock %}
 
 {% block scripts %}
+<!-- Scroll Reveal-->
+<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+<script>
+	//Setup scroll reveal
+	sr = ScrollReveal();
+
+	// scroll reveal
+	sr.reveal('.panel',{
+  		reset: true,
+		duration: 1000,
+		viewFactor: 0.3,
+	});
+</script>
 {% endblock %}

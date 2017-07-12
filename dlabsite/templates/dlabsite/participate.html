@@ -19,19 +19,19 @@ class="active"
 </div>
 <div class="container animated fadeIn" style="min-height: 700px;">
 	{% for study in currentstudies %}
-	<div class="row">
+	<div class="row participate-row" style="visibility: hidden;">
 		<div class="panel panel-default">
 			<div class="panel-heading"><h5>{{study.title}}</h5></div>
 			<div class="panel-body">
 				{% autoescape off %}
 				{{study.description}}
 				{% endautoescape %}
-				<a class="btn btn-primary" href="">Join</a>
+				<a class="btn btn-primary" target="_blank" href="{{study.link}}">Join</a>
 			</div>
 		</div>
 	</div>
 	{% endfor %}
-	<div class="row">
+	<div class="row participate-row" style="visibility: hidden;">
 		<div class="col-lg-12">
 			<h4>MRI Scanning</h4>
 			<p>If you are participating in a study that includes MRI scanning,
@@ -46,7 +46,7 @@ class="active"
 				comfort. During a portion of the scans, you may watch a movie. We have a fairly wide selection of movies
 				from which to choose, you may bring your own (no Blu-rays), or choose something from Netflix.</p>
 		</div>
-	<div class="row">
+	<div class="row participate-row" style="visibility: hidden;">
 		<div class="col-lg-12">
 			<h4>Resources</h4>
 			<p>Stuff will go here...</p>
@@ -56,4 +56,17 @@ class="active"
 {% endblock %}
 
 {% block scripts %}
+<!-- Scroll Reveal-->
+<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+<script>
+	//Setup scroll reveal
+	sr = ScrollReveal();
+
+	// scroll reveal
+	sr.reveal('.participate-row',{
+		reset: true,
+		duration: 1000,
+		viewFactor: 0.3,
+	});
+</script>
 {% endblock %}

@@ -84,6 +84,7 @@ class currentstudyadmin(admin.ModelAdmin):
             'fields': (
                 'title',
                 'description',
+                'link',
             )
         }),
     )

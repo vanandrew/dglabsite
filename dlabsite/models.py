@@ -212,5 +212,12 @@ class current_study(models.Model):
         verbose_name = "Description"
     )
 
+    # create link to study form
+    link = models.CharField(
+        max_length = 1000,
+        null = True,
+        verbose_name = "Link"
+    )
+
     def __unicode__(self):
         return self.title
