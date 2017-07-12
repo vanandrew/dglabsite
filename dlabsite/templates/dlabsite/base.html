@@ -73,6 +73,9 @@
 						<li {% block participate %}{% endblock %}>
 							<a href="{% url 'dlabsite:participate' %}" id="participate">participate</a>
 						</li>
+						<li {% block directions %}{% endblock %}>
+							<a href="{% url 'dlabsite:directions' %}" id="directions">directions</a>
+						</li>
 						<li {% block careers %}{% endblock %}>
 							<a href="{% url 'dlabsite:careers' %}" id="careers">careers</a>
 						</li>
@@ -90,7 +93,7 @@
 		{% if request.get_full_path != '/' %}
 		<div class="container" style="margin-top: 50px; margin-bottom: 25px;">
 			<div class="row">
-				<div class="col-lg-8 col-lg-offset-2 text-center">
+				<div class="col-lg-8 col-lg-offset-2 text-center" style="font-size: 11px;">
 					<p>This site was designed and coded by <a href="mailto:vanandrew@wustl.edu">Andrew Van</a>.
 						View the source code<a href="https://github.com/vanandrew/dglabsite"> here</a>.</p>
 			</div>
@@ -114,6 +117,7 @@
 			navbar_click('#data','{% url 'dlabsite:data' %}','body>div,body>section');
 			navbar_click('#software','{% url 'dlabsite:software' %}','body>div,body>section');
 			navbar_click('#wiki','{% url 'dlabsite:wiki' %}','body>div,body>section');
+			navbar_click('#directions','{% url 'dlabsite:directions' %}','body>div,body>section');
 			navbar_click('#participate','{% url 'dlabsite:participate' %}','body>div,body>section');
 			navbar_click('#careers','{% url 'dlabsite:careers' %}','body>div,body>section');
 			navbar_click('#contact','{% url 'dlabsite:contact' %}','body>div,body>section');

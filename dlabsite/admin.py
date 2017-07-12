@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import (lab_member, research, publication,
-    research_image, publication_link, job_listing)
+    research_image, publication_link, job_listing, current_study)
 
 # admin for lab member model
 class labmemberadmin(admin.ModelAdmin):
@@ -74,12 +74,28 @@ class joblistingadmin(admin.ModelAdmin):
             )
         }),
     )
+    search_fields = ('title','jobid',)
+    save_as = True
+
+class currentstudyadmin(admin.ModelAdmin):
+    ordering = ('title',)
+    fieldsets = (
+        ('Current Study', {
+            'fields': (
+                'title',
+                'description',
+            )
+        }),
+    )
+    search_fields = ('title',)
+    save_as = True
 
 # dlabsite models
 admin.site.register(lab_member, labmemberadmin)
 admin.site.register(research, researchadmin)
 admin.site.register(publication, publicationadmin)
 admin.site.register(job_listing, joblistingadmin)
+admin.site.register(current_study, currentstudyadmin)
 
 # customize admin site names
 admin.site.site_title = 'Admin'

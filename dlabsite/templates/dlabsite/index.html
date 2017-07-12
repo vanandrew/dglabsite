@@ -9,7 +9,7 @@
 <script>sibling(['{% url 'dlabsite:people' %}','{% url 'dlabsite:research' %}',
 '{% url 'dlabsite:publications' %}','{% url 'dlabsite:data' %}',
 '{% url 'dlabsite:software' %}','{% url 'dlabsite:wiki' %}','{% url 'dlabsite:participate' %}',
-'{% url 'dlabsite:careers' %}','{% url 'dlabsite:contact' %}'])</script>
+'{% url 'dlabsite:directions' %}','{% url 'dlabsite:careers' %}','{% url 'dlabsite:contact' %}'])</script>
 {% endblock %}
 
 {% block home %}
@@ -18,7 +18,7 @@ class="active"
 
 {% block content %}
 <div class="title-content animated fadeIn">
-	<img class="title" src="{% static 'dlabsite/img/DLTextLogo.png' %}">
+	<img class="title center-block" src="{% static 'dlabsite/img/DLTextLogo.png' %}">
 </div>
 <!--div class="title-arrow animated fadeIn">
 	<i class="fa fa-angle-down" aria-hidden="true"></i>

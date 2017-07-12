@@ -12,6 +12,7 @@ urlpatterns = [
     url(r'^data', views.data_page, name='data'),
     url(r'^software', views.software_page, name='software'),
     url(r'^wiki', views.wiki_page, name='wiki'),
+    url(r'^directions', views.directions_page, name='directions'),
     url(r'^participate', views.participate_page, name='participate'),
     url(r'^careers', views.careers_page, name='careers'),
     url(r'^contact', views.contact_page, name='contact'),

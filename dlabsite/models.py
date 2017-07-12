@@ -195,3 +195,22 @@ class job_listing(models.Model):
 
     def __unicode__(self):
         return self.title + " - " + str(self.jobid)
+
+# Create class for current study listing
+class current_study(models.Model):
+    class Meta:
+        verbose_name = "Current Study"
+
+    # Create title for Study
+    title = models.CharField(
+        max_length = 350,
+        verbose_name = "Title"
+    )
+
+    # Create study description
+    description = models.TextField(
+        verbose_name = "Description"
+    )
+
+    def __unicode__(self):
+        return self.title

@@ -81,6 +81,7 @@ body {
 	z-index: 2;
 	top: 45%;
 	text-align: center;
+	width: 100%;
 	-webkit-animation-delay: 1500ms;
 	        animation-delay: 1500ms;
 }
@@ -143,4 +144,7 @@ body {
     margin-left: auto;
     margin-right: auto;
 	padding: 10px 10px;
+}
+.sub-caption {
+	font-size: 18px;
 }

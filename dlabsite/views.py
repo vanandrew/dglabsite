@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import JsonResponse, HttpResponseRedirect
-from .models import lab_member, research, publication, job_listing
+from .models import lab_member, research, publication, job_listing, current_study
 from datetime import datetime
 
 # homepage
@@ -36,9 +36,14 @@ def software_page(request):
 def wiki_page(request):
     return HttpResponseRedirect('http://10.20.94.224:778/')
 
+# directions
+def directions_page(request):
+    return render(request, 'dlabsite/directions.html')
+
 # participate
 def participate_page(request):
-    return render(request, 'dlabsite/participate.html')
+    currentstudies = current_study.objects.all().order_by('title')
+    return render(request, 'dlabsite/participate.html', {'currentstudies': currentstudies})
 
 # careers
 def careers_page(request):
