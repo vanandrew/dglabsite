@@ -27,7 +27,7 @@ DEBUG = True
 
 if DEBUG == False:
     SECURE_CONTENT_TYPE_NOSNIFF = True
-    
+
 
 ALLOWED_HOSTS = []
 
@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'dlabsite.apps.DlabsiteConfig',
+    'django_cleanup',
 ]
 
 MIDDLEWARE = [

@@ -190,6 +190,8 @@ class job_listing(models.Model):
 
     # Create Job Description
     description = models.TextField(
+        blank = True,
+        null = True,
         verbose_name = "Description"
     )
 
@@ -209,6 +211,8 @@ class current_study(models.Model):
 
     # Create study description
     description = models.TextField(
+        blank = True,
+        null = True,
         verbose_name = "Description"
     )
 
@@ -217,6 +221,14 @@ class current_study(models.Model):
         max_length = 1000,
         null = True,
         verbose_name = "Link"
+    )
+
+    # flier attachement
+    flier = models.FileField(
+        upload_to='attachments/',
+        null = True,
+        blank = True,
+        verbose_name = "Flier"
     )
 
     def __unicode__(self):

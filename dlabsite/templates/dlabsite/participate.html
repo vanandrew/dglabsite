@@ -27,6 +27,9 @@ class="active"
 				{{study.description}}
 				{% endautoescape %}
 				<a class="btn btn-primary" target="_blank" href="{{study.link}}">Join</a>
+				{% if study.flier.url != '' %}
+				<a class="btn btn-info" target="_blank" href="{{study.flier.url}}">Flier</a>
+				{% endif %}
 			</div>
 		</div>
 	</div>

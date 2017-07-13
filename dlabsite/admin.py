@@ -85,6 +85,7 @@ class currentstudyadmin(admin.ModelAdmin):
                 'title',
                 'description',
                 'link',
+                'flier',
             )
         }),
     )
