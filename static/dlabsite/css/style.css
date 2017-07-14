@@ -4,6 +4,7 @@ html, body {
 body {
 	font-family: 'Lato', sans-serif !important;
 	font-weight: 300;
+	font-size: 16px;
 }
 .container-fluid {
     padding-left: 0px;
