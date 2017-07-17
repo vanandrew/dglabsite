@@ -29,24 +29,29 @@ class="active"
 				your information.</p>
 		</div>
 	</div>
+	<br>
 	{% for study in currentstudies %}
-	<div class="row participate-row" style="visibility: hidden;">
-		<div class="panel panel-default">
-			<div class="panel-heading"><h4>{{study.title}}</h4></div>
-			<div class="panel-body">
-				{% autoescape off %}
-				{{study.description}}
-				{% endautoescape %}
-				<a class="btn btn-primary" target="_blank" href="{{study.link}}">Join</a>
-				{% if study.flier.url != '' %}
-				<a class="btn btn-info" target="_blank" href="{{study.flier.url}}">Flier</a>
-				{% endif %}
+	{% cycle '<div class="row participate-row" style="visibility: hidden;">' '' %}
+		<div class="col-md-6">
+			<div class="panel panel-default">
+				<div class="panel-heading"><h4>{{study.title}}</h4></div>
+				<div class="panel-body" style="min-height: 350px;">
+					{% autoescape off %}
+					{{study.description}}
+					{% endautoescape %}
+				</div>
+				<div class="panel-footer">
+					<a class="btn btn-primary" target="_blank" href="{{study.link}}">Join</a>
+					{% if study.flier.url != '' %}
+					<a class="btn btn-info" target="_blank" href="{{study.flier.url}}">Flier</a>
+					{% endif %}
+				</div>
 			</div>
 		</div>
-	</div>
+	{% cycle '' '</div>' %}
 	{% endfor %}
 	<div class="row participate-row" style="visibility: hidden;">
-		<div class="col-md-6">
+		<div class="col-md-12">
 			<h3>What to Expect</h3>
 			<p>The clinical research assistant will meet you in the lobby of the East Building.
 				The study you are participating in will be further explained to you, you will be screened for
@@ -61,9 +66,9 @@ class="active"
 				remember that your participation is entirely voluntary and you may quit at any time or omit portions
 				of the study. We are excited to have you participate!</p>
 		</div>
-	<!--/div>
-	<div class="row participate-row" style="visibility: hidden;"-->
-		<div class="col-md-6">
+	</div>
+	<div class="row participate-row" style="visibility: hidden;">
+		<div class="col-md-12">
 			<h3>MRI Scanning</h3>
 			<p>If you are participating in a study that includes MRI scanning, please wear comfortable clothing
 				without a belt or metal studs in the back. Remember to remove all metal from your body, including
