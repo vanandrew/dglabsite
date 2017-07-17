@@ -22,6 +22,13 @@ class="active"
 	</section>
 </div>
 <div class="container animated fadeIn" style="min-height: 700px;">
+	<div class="row participate-row" style="visibility: hidden;">
+		<div class="col-lg-12 text-center">
+			<p>Below is a list of our ongoing studies. If you would like to participate in one, please click the
+				<b>Join</b> button and fill out the form. We will contact you shortly after reviewing
+				your information.</p>
+		</div>
+	</div>
 	{% for study in currentstudies %}
 	<div class="row participate-row" style="visibility: hidden;">
 		<div class="panel panel-default">
@@ -39,19 +46,38 @@ class="active"
 	</div>
 	{% endfor %}
 	<div class="row participate-row" style="visibility: hidden;">
-		<div class="col-lg-12">
+		<div class="col-md-6">
+			<h3>What to Expect</h3>
+			<p>The clinical research assistant will meet you in the lobby of the East Building.
+				The study you are participating in will be further explained to you, you will be screened for
+				eligibility, and consent documents will be signed. Questionnaires and other study documents
+				will be completed at this time. If the study in which you’re participating involves MRI scanning,
+				a mock scan will be completed first. This is a simulation of the real MRI scan. It provides an
+				opportunity to see the scanning environment and get a better understanding of what a real scan is
+				like. We are then able to determine if you will tolerate lying still for the scan
+				portions of the study.</p>
+			<p>The study team wants you to be as comfortable as possible. We have snacks and drinks available
+				to you. We try to be as flexible as possible with scheduling study visits. In addition, please
+				remember that your participation is entirely voluntary and you may quit at any time or omit portions
+				of the study. We are excited to have you participate!</p>
+		</div>
+	<!--/div>
+	<div class="row participate-row" style="visibility: hidden;"-->
+		<div class="col-md-6">
 			<h3>MRI Scanning</h3>
-			<p>If you are participating in a study that includes MRI scanning,
-				please wear comfortable clothing without a belt or metal studs in the back.
-				Remember to remove all metal from your body, including jewelry and hair accessories.</p>
-			<p>The MRI scans do not include radiation, sedation, or anesthesia.
-				You will be required to fill out an MRI safety screening questionnaire to determine
-				if it is safe for you to be scanned (See Questionnaire <a target="_blank" href="{% static 'dlabsite/other_resources/MRI_Screening_Form.pdf' %}">here</a>).
+			<p>If you are participating in a study that includes MRI scanning, please wear comfortable clothing
+				without a belt or metal studs in the back. Remember to remove all metal from your body, including
+				jewelry and hair accessories.</p>
+			<p>The MRI scans do not include radiation, sedation, or anesthesia. You will be required to fill out an
+				<a target="_blank" href="{% static 'dlabsite/other_resources/MRI_Screening_Form.pdf' %}">MRI safety
+				screening questionnaire</a> to determine if it is safe for you to be scanned.
 				The study staff will ensure that you are as comfortable as possible during your scanning session.
-				Earbuds are provided to minimize the sound levels of the scanner and allow voice communication with the
-				scanner operator. You are asked to lie flat on a padded surface with pillows, sheets, and blankets for
-				comfort. During a portion of the scans, you may watch a movie. We have a fairly wide selection of movies
-				from which to choose, you may bring your own (no Blu-rays), or choose something from Netflix.</p>
+				Earbuds are provided to minimize the sound levels of the scanner and allow voice communication with
+				the scanner operator. You are asked to lie flat on a padded surface with pillows, sheets, and blankets
+				for comfort. We try to ensure participants are as comfortable as possible. You are able to inform the
+				scanner operator of any discomfort during the scan.</p>
+			<p>During a portion of the scans, you may watch a movie. We have a fairly wide selection of movies from
+				which to choose, you may bring your own movie (no Blu-rays), or choose something from Netflix.</p>
 		</div>
 	</div>
 	<div class="row participate-row" style="visibility: hidden;">
@@ -72,9 +98,9 @@ class="active"
 
 	// scroll reveal
 	sr.reveal('.participate-row',{
-		reset: true,
+		reset: false,
 		duration: 1000,
-		viewFactor: 0.3,
+		viewFactor: 0.2,
 	});
 </script>
 {% endblock %}
