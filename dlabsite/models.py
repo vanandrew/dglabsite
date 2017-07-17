@@ -233,3 +233,75 @@ class current_study(models.Model):
 
     def __unicode__(self):
         return self.title
+
+# Create class for data listing
+class data_listing(models.Model):
+    class Meta:
+        verbose_name = "Data Listing"
+
+    # Create title for data listing
+    title = models.CharField(
+        max_length = 350,
+        verbose_name = "Title"
+    )
+
+    # Create description for data listing
+    description = models.TextField(
+        blank = True,
+        null = True,
+        verbose_name = "Description"
+    )
+
+    # create link to data listing
+    link = models.CharField(
+        max_length = 1000,
+        null = True,
+        verbose_name = "Link"
+    )
+
+    # image for data_listing
+    image = models.ImageField(
+        upload_to='data_listing_images/',
+        null = True,
+        blank = True,
+        verbose_name = "Image"
+    )
+
+    def __unicode__(self):
+        return self.title
+
+# Create class for software listing
+class software_listing(models.Model):
+    class Meta:
+        verbose_name = "Software Listing"
+
+    # Create title for software listing
+    title = models.CharField(
+        max_length = 350,
+        verbose_name = "Title"
+    )
+
+    # Create description for software listing
+    description = models.TextField(
+        blank = True,
+        null = True,
+        verbose_name = "Description"
+    )
+
+    # create link to software listing
+    link = models.CharField(
+        max_length = 1000,
+        null = True,
+        verbose_name = "Link"
+    )
+
+    # image for software listing
+    image = models.ImageField(
+        upload_to='software_listing_images/',
+        null = True,
+        blank = True,
+        verbose_name = "Image"
+    )
+
+    def __unicode__(self):
+        return self.title

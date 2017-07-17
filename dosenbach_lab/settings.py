@@ -29,7 +29,7 @@ if DEBUG == False:
     SECURE_CONTENT_TYPE_NOSNIFF = True
 
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['10.20.94.224']
 
 
 # Application definition
