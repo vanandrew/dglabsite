@@ -1,6 +1,10 @@
 {% extends "dlabsite/base.html" %}
 {% load staticfiles %}
 
+{% block title %}
+Participate
+{% endblock %}
+
 {% block participate %}
 class="active"
 {% endblock %}
@@ -21,7 +25,7 @@ class="active"
 	{% for study in currentstudies %}
 	<div class="row participate-row" style="visibility: hidden;">
 		<div class="panel panel-default">
-			<div class="panel-heading"><h5>{{study.title}}</h5></div>
+			<div class="panel-heading"><h4>{{study.title}}</h4></div>
 			<div class="panel-body">
 				{% autoescape off %}
 				{{study.description}}
@@ -36,7 +40,7 @@ class="active"
 	{% endfor %}
 	<div class="row participate-row" style="visibility: hidden;">
 		<div class="col-lg-12">
-			<h4>MRI Scanning</h4>
+			<h3>MRI Scanning</h3>
 			<p>If you are participating in a study that includes MRI scanning,
 				please wear comfortable clothing without a belt or metal studs in the back.
 				Remember to remove all metal from your body, including jewelry and hair accessories.</p>
@@ -51,7 +55,7 @@ class="active"
 		</div>
 	<div class="row participate-row" style="visibility: hidden;">
 		<div class="col-lg-12">
-			<h4>Resources</h4>
+			<h3>Resources</h3>
 			<p>Stuff will go here...</p>
 		</div>
 	</div>

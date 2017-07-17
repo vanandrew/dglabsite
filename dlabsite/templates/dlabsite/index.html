@@ -1,6 +1,10 @@
 {% extends "dlabsite/base.html" %}
 {% load staticfiles %}
 
+{% block title %}
+Home
+{% endblock %}
+
 {% block head %}
 <!-- Reset Position of the page on refresh -->
 <script>window.onload = function() {setTimeout (function () {scrollTo(0,0);}, 100);}</script>

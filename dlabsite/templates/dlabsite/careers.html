@@ -1,6 +1,10 @@
 {% extends "dlabsite/base.html" %}
 {% load staticfiles %}
 
+{% block title %}
+Careers
+{% endblock %}
+
 {% block careers %}
 class="active"
 {% endblock %}
@@ -27,7 +31,7 @@ class="active"
 	{% for job in jobpostings %}
 	<div class="row">
 		<div class="panel panel-default" style="visibility: hidden;">
-			<div class="panel-heading"><h5>{{job.title}} - {{job.jobid}}</h5></div>
+			<div class="panel-heading"><h4>{{job.title}} - {{job.jobid}}</h4></div>
 			<div class="panel-body">
 				{% autoescape off %}
 				{{job.description}}

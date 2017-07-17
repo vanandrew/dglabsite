@@ -1,6 +1,10 @@
 {% extends "dlabsite/base.html" %}
 {% load staticfiles %}
 
+{% block title %}
+Software
+{% endblock %}
+
 {% block software %}
 class="active"
 {% endblock %}
@@ -17,7 +21,39 @@ class="active"
 		</div>
 	</section>
 </div>
+<div class="container" style="min-height: 700px;">
+	{% for listing in software %}
+	{% cycle '<div class="row">' '' '' %}
+		<div class="col-sm-4">
+			<div class="panel panel-default" style="visibility: hidden;">
+				<div class="panel-body">
+					{% if listing.image.url != '' %}
+					<a href="{{listing.link}}"><img class="img-responsive center-block" src="{{listing.image.url}}" width=300px></a>
+					{% endif %}
+					<p><h4>{{listing.title}}</h4></p>
+					{% autoescape off %}
+					{{listing.description}}
+					{% endautoescape %}
+				</div>
+			</div>
+		</div>
+	{% cycle '' '' '</div>' %}
+	{% endfor %}
+</div>
 {% endblock %}
 
 {% block scripts %}
+<!-- Scroll Reveal-->
+<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+<script>
+	//Setup scroll reveal
+	sr = ScrollReveal();
+
+	// scroll reveal
+	sr.reveal('.panel',{
+  		reset: true,
+		duration: 1000,
+		viewFactor: 0.3,
+	});
+</script>
 {% endblock %}

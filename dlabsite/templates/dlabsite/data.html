@@ -1,6 +1,10 @@
 {% extends "dlabsite/base.html" %}
 {% load staticfiles %}
 
+{% block title %}
+Data
+{% endblock %}
+
 {% block data %}
 class="active"
 {% endblock %}
@@ -10,14 +14,48 @@ class="active"
 	<section class="section">
 		<div class="row">
 			<div class="col-lg-8 col-lg-offset-2 text-center">
-				<h2>Data</h2>
+				<h2>Datasets</h2>
 				<hr>
 				<p class="sub-caption">Our data. Your science.</p>
 			</div>
 		</div>
 	</section>
 </div>
+<div class="container" style="min-height: 700px;">
+	{% for listing in data %}
+	<div class="row">
+		<div class="panel panel-default" style="visibility: hidden;">
+			<div class="panel-body">
+				<div class="col-lg-2">
+					{% if listing.image.url != '' %}
+					<a href="{{listing.link}}"><img class="img-responsive center-block" src="{{listing.image.url}}" width=300px></a>
+					{% endif %}
+				</div>
+				<div class="col-lg-10">
+					<p><h4>{{listing.title}}</h4></p>
+					{% autoescape off %}
+					{{listing.description}}
+					{% endautoescape %}
+				</div>
+			</div>
+		</div>
+	</div>
+	{% endfor %}
+</div>
 {% endblock %}
 
 {% block scripts %}
+<!-- Scroll Reveal-->
+<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+<script>
+	//Setup scroll reveal
+	sr = ScrollReveal();
+
+	// scroll reveal
+	sr.reveal('.panel',{
+  		reset: true,
+		duration: 1000,
+		viewFactor: 0.3,
+	});
+</script>
 {% endblock %}

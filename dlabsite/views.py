@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import JsonResponse, HttpResponseRedirect
-from .models import lab_member, research, publication, job_listing, current_study
+from .models import (lab_member, research, publication, job_listing,
+    current_study, data_listing, software_listing)
 from datetime import datetime
 
 # homepage
@@ -26,11 +27,13 @@ def publications_page(request):
 
 # data
 def data_page(request):
-    return render(request, 'dlabsite/data.html')
+    data = data_listing.objects.all().order_by('title')
+    return render(request, 'dlabsite/data.html', {'data': data})
 
 # software
 def software_page(request):
-    return render(request, 'dlabsite/software.html')
+    software = software_listing.objects.all().order_by('title')
+    return render(request, 'dlabsite/software.html', {'software': software})
 
 # wiki
 def wiki_page(request):
