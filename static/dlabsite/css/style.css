@@ -49,34 +49,6 @@ body {
 	-webkit-animation-delay: 500ms;
 	        animation-delay: 500ms;
 }
-.title-arrow {
-	font-size: 35px;
-	color: rgba(0,0,0,1);
-	width: 50px;
-	line-height: 48px;
-	border-radius: 50%;
-	height: 50px;
-	border: 1px solid rgba(0,0,0,1);
-	display: block;
-	margin: 0 auto;
-	position: absolute;
-	bottom: 20px;
-	left: 50%;
-	z-index: 2;
-	-webkit-transform: translateX(-50%);
-	transform: translateX(-50%);
-	opacity: .9;
-	text-align: center;
-	-webkit-animation-delay: 1500ms;
-	        animation-delay: 1500ms;
-}
-.title-arrow:hover {
-	background-color: rgba(224,224,224,1);
-	cursor: pointer;
-}
-.title-arrow>i {
-	width: 100%;
-}
 .title-content {
 	position: absolute;
 	z-index: 2;
@@ -123,9 +95,9 @@ body {
 	        animation-delay: 500ms;
 }
 .lab-mem-portrait {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 	width: 225px;
 	height: 300px;
 	padding: 10px 10px;
@@ -141,11 +113,22 @@ body {
 }
 .group-img {
 	width: 750px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 	padding: 10px 10px;
 }
 .sub-caption {
 	font-size: 18px;
+}
+.research-text {
+	font-size: 30px;
+}
+.project-text {
+	color: white;
+	font-size: 20px;
+}
+.project-section {
+	background: black;
+	height: 150%;
 }

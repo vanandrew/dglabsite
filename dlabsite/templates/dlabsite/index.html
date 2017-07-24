@@ -24,9 +24,6 @@ class="active"
 <div class="title-content animated fadeIn">
 	<img class="title center-block" src="{% static 'dlabsite/img/DLTextLogo.png' %}">
 </div>
-<!--div class="title-arrow animated fadeIn">
-	<i class="fa fa-angle-down" aria-hidden="true"></i>
-</div-->
 <div class="container-fluid section-header">
 	<div id="particles-js" class="animated fadeIn particle"></div>
 </div>
@@ -48,25 +45,4 @@ class="active"
     $(document).ready(setpos);
     $(window).resize(setpos);
 </script>
-<!-- scroll arrow -->
-<!--script>
-	// scroll down the page on click of arrow
-	$(".title-arrow").click(function() {
-		$('html,body').animate({
-			scrollTop: $(".section-block").offset().top},1500);
-	});
-</script-->
-<!-- Scroll Reveal-->
-<!--script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
-<script>
-	//Setup scroll reveal
-	window.sr = ScrollReveal();
-
-	// scroll reveal
-	sr.reveal('div>section',{
-		reset: true,
- 		duration: 1000,
- 	   	viewFactor: 0.5,
-  	});
-</script-->
 {% endblock %}

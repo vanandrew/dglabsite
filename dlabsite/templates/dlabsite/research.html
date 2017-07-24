@@ -5,23 +5,141 @@
 Research
 {% endblock %}
 
+{% block head %}
+<!-- Reset Position of the page on refresh -->
+<script>window.onload = function() {setTimeout (function () {scrollTo(0,0);}, 100);}</script>
+{% endblock %}
+
 {% block research %}
 class="active"
 {% endblock %}
 
 {% block content %}
-<div class="container container-nav-clear animated fadeIn">
-	<section class="section">
-		<div class="row">
-			<div class="col-lg-8 col-lg-offset-2 text-center">
-				<h2>Research</h2>
-				<hr>
-				<p class="sub-caption">Think Links.</p>
-			</div>
+<div class="container-fluid container-nav-clear animated fadeIn" style="height: 100%; display: table;">
+	<div class="intro row" style="display: table-cell; vertical-align: middle;">
+		<div class="col-md-4 col-md-offset-2">
+			<p class="research-text">Plasticity is one of the hallmark features of the human brain.
+				Use-driven plasticity is critically important for typical development as well as
+				recovering from brain injury. Thus, the overarching goal of our research
+				is to better understand use-driven brain plasticity. To this end we are
+				using various structural and functional MRI and behavioral phenotyping techniques.</p>
 		</div>
-	</section>
+		<div class="col-md-4">
+			<p class="research-text">To properly study use-driven brain plasticity in humans, we must overcome a series of
+				exciting challenges. Hence, we have created a multi-pronged plan of attack and are
+				coming at this fascinating problem from several different angles.</h2>
+			<br>
+			<h2>Scroll down to learn more...</h2>
+		</div>
+	</div>
 </div>
-{% endblock %}
+<div class="buffer1 container-fluid project-section"></div>
+<div class="container-fluid project-section">
+	<div class="project1 row">
+		<div class="col-md-4 col-md-offset-2">
+			<img class="img-responsive" src="{% static 'dlabsite/img/hmm.svg' %}">
+		</div>
+		<div class="col-md-4">
+			<h2 style="color: white;">Real-time methods for improving MRI quality</h2>
+			<p class="project-text">A challenge common to all functional MRI research is the low signal-to-noise ratio of
+				blood oxygenation level dependent (BOLD) data and how easily it is distorted by head motion and drowsiness.
+				In addition to deploying the most advanced data denoising strategies we have developed a
+				<a target="_blank" href="http://firmm.us">Framewise Integrated Real-Time MRI Monitoring (FIRMM)</a> software suite for
+				real-time quality control. We are currently working on further improvements to FIRMM, as well as expanding
+				the approach to drowsiness monitoring and real-time feedback strategies to prevent head motion.</p>
+		</div>
+	</div>
+</div>
+<div class="container-fluid project-section">
+	<div class="project2 row">
+		<div class="col-md-4 col-md-offset-2">
+			<h2 style="color: white;">Precision functional mapping of individual human brains</h2>
+			<p class="project-text">Individual brains differ in the details of their network organization and use-driven plasticity further
+				adds to this functional brain diversity. Therefore, we have moved away from averaging neuroimaging data across
+				groups of people. Instead, we strive to collect large amounts of high-quality functional MRI data for each individual.
+				This allows us to generate precise individual-specific functional network maps of human brains.
+				<a target="_blank" href="http://midnightscanclub.org">The Midnight Scan Club</a> project collected many hours
+				of high quality, multi-modal MRI data in 10 young adults (24-34 yo; 5F). Even this small, fairly homogenous sample
+				already revealed common variants in the brain’s global network organization. </p>
+		</div>
+		<div class="col-md-4">
+			<img class="img-responsive" src="{% static 'dlabsite/img/hmm.svg' %}">
+		</div>
+	</div>
+</div>
+<div class="container-fluid project-section">
+	<div class="project3 row">
+		<div class="col-md-4 col-md-offset-2">
+			<img class="img-responsive" src="{% static 'dlabsite/img/hmm.svg' %}">
+		</div>
+		<div class="col-md-4">
+			<h2 style="color: white;">Perinatal stroke as a model of successful neuroplasticity</h2>
+			<p class="project-text">Perinatal stroke (22 wks gest. - 28 days) occurs in > 1/3,000 live births.
+				Some perinatal stroke survivors have no discernable deficits and many have only minimal impairments.
+				Thus, perinatal stroke represents a best-case recovery scenario that reveals the brain’s full potential
+				for successful use-driven neuroplasticity. Using novel high-fidelity individual functional connectomics, we
+				seek to understand how the brains of individual perinatal stroke survivors can function so remarkably well despite
+				structural damage. This information is critically important for developing therapies that can drive the brains of all
+				brain injury survivors towards a similarly efficient functional architecture, independent of age.</p>
+		</div>
+	</div>
+</div>
+<div class="container-fluid project-section">
+	<div class="project4 row">
+		<div class="col-md-4 col-md-offset-2">
+			<h2 style="color: white;">Deep phenotyping</h2>
+			<p class="project-text">To understand how differences in functional brain organization relate to behavior and to learn how
+				brain structures and behavioral abilities change with practice, we must do a much better job tracking and measuring
+				real-world behaviors. Questionnaires are notoriously unreliable and laboratory-based assessments are unrealistic,
+				therefore we have turned to wearable biosensors. We are building a database of normative activity, as measured by
+				bilateral upper extremity accelerometry, in children from birth until 18 years of age. In addition to standard
+				neuropsychological tests and the NIH Toolbox, we are also adding accelerometry which provides information about
+				sleep and activity levels to our adult studies.</p>
+		</div>
+		<div class="col-md-4">
+			<img class="img-responsive" src="{% static 'dlabsite/img/hmm.svg' %}">
+		</div>
+	</div>
+</div>
+<div class="container-fluid project-section lastsection" style="height: 200%;">
+	<div class="project5 row">
+		<div class="col-md-4 col-md-offset-2">
+			<img class="img-responsive" src="{% static 'dlabsite/img/hmm.svg' %}">
+		</div>
+		<div class="col-md-4">
+			<h2 style="color: white;">Plasticity interventions</h2>
+			<p class="project-text">Identifying and tracking plastic brain changes in single individuals requires a powerful intervention.
+				Therefore, we have been studying Constraint-Induced Movement Therapy (CIMT), which requires restricting the more mobile limb
+				with a cast, in children with chronic hemiparesis. We also adapted this treatment for the in-depth study of limb restriction
+				and accompanying brain changes in healthy young adults.</p>
+		</div>
+	</div>
+</div>
+<div class="container-fluid" style="height: 100%; display: table;">
+	<div class="outro row" style="display: table-cell; vertical-align: middle;">
+		<div class="col-md-8 col-md-offset-2">
+			<p class="research-text">The list of research areas above is far from exhaustive since our rate limiting factor is people-power,
+				not ideas. The general tenor of all the ideas/projects is that we are looking for better and more data per subject than most,
+				because we aren’t averaging across individuals. We’re interested in manipulations that will help us understand plasticity and
+				we like going after difficult to obtain human data. We’re also interested in hardware and software tool development that will
+				improve MRI data quality and bring us closer towards using functional MRI as a diagnostic tool in the hospital.</p>
+		</div>
+	</div>
+</div>
+{% endblock  %}
 
 {% block scripts %}
+<script>
+	$(window).scroll(function(){
+		$(".intro").css("opacity", 1 - ($(window).scrollTop()-60)/($(window).height()/2));
+		$(".buffer1").css("opacity", ($(window).scrollTop()-($(window).height()))/($(window).height()/2));
+		$(".project1").css("opacity", ($(window).scrollTop()-(1.75*$(window).height()))/($(window).height()/3));
+		$(".project2").css("opacity", ($(window).scrollTop()-(3.25*$(window).height()))/($(window).height()/3));
+		$(".project3").css("opacity", ($(window).scrollTop()-(4.75*$(window).height()))/($(window).height()/3));
+		$(".project4").css("opacity", ($(window).scrollTop()-(6.25*$(window).height()))/($(window).height()/3));
+		$(".project5").css("opacity", ($(window).scrollTop()-(7.75*$(window).height()))/($(window).height()/3));
+		$(".lastsection").css("opacity", 1 - ($(window).scrollTop()-(9*$(window).height()))/($(window).height()/2));
+		$(".outro").css("opacity", ($(window).scrollTop()-(9.75*$(window).height()))/($(window).height()/1.25));
+	});
+</script>		
 {% endblock %}

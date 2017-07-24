@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from django.http import JsonResponse, HttpResponseRedirect
-from .models import (lab_member, research, publication, job_listing,
+from django.http import HttpResponseRedirect
+from .models import (lab_member, publication, job_listing,
     current_study, data_listing, software_listing)
 from datetime import datetime
 
@@ -16,14 +16,14 @@ def people_page(request):
 
 # research
 def research_page(request):
-    query_research = research.objects.all()
-    return render(request, 'dlabsite/research.html', {'query_research': query_research})
+    return render(request, 'dlabsite/research.html')
 
 # publications
 def publications_page(request):
     publications = publication.objects.all().order_by('-date')
     lastfiveyears = [datetime.now().year,datetime.now().year-1,datetime.now().year-2,datetime.now().year-3,datetime.now().year-4]
-    return render(request, 'dlabsite/publications.html', {'publications': publications,'lastfiveyears': lastfiveyears})
+    years = [year for year in lastfiveyears if year >= 2015]
+    return render(request, 'dlabsite/publications.html', {'publications': publications,'years': years})
 
 # data
 def data_page(request):

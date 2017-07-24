@@ -41,7 +41,7 @@ class="active"
 	<div class="grid">
 		<div class="grid-sizer col-xs-1 col-sm-1 col-md-1"></div>
 		{% for person in members %}
-		<div class="grid-item col-xs-12 col-sm-4 col-md-3 animated fadeIn" data-alumni="{{ person.alumni }}" data-fname="{{ person.first_name }}" data-lname="{{ person.last_name }}">
+		<div class="member grid-item col-xs-12 col-sm-4 col-md-3 animated fadeIn" data-alumni="{{ person.alumni }}" data-fname="{{ person.first_name }}" data-lname="{{ person.last_name }}">
 			{% if person.photo.url != '' %}
 			<img class="lab-mem-portrait" src="{{person.photo.url}}" data-toggle="modal" data-target="#person_{{ forloop.counter0 }}">
 			{% else %}
@@ -50,7 +50,7 @@ class="active"
 			<p class="text-center">{{ person.last_name }}, {{ person.first_name }} </p>
 		</div>
 		{% endfor %}
-		<div class="grid-item col-xs-12 text-center" style="font-size: 11px; padding-top: 30px;padding-bottom: 30px;">
+		<div class="grid-item col-xs-12 text-center" style="font-size: 9px; padding-top: 30px;padding-bottom: 30px;">
 			<p>This site was designed and coded by <a href="mailto:vanandrew@wustl.edu">Andrew Van</a>.
 				View the source code<a target="_blank" href="https://github.com/vanandrew/dglabsite"> here</a>.
 				Copyright (&copy;) 2017 Andrew Van.</p>
@@ -112,7 +112,7 @@ class="active"
 	// Get checkbox status
 	function getcheckboxstatus() {
 		// Check each grid item alumni data tag
-		$('.grid-item').each(function() {
+		$('.member').each(function() {
 			eledata = $(this).data();
 			// if member is NOT alumni
 			if (eledata['alumni'] == 'False') {
@@ -148,10 +148,10 @@ class="active"
 	$('#search').keyup(function () {
 		getcheckboxstatus();
 		if ($(this).val()) {
-			$('.grid-item:visible').Elefilt($(this).val(),['fname','lname'])
+			$('.member:visible').Elefilt($(this).val(),['fname','lname'])
 		}
 		else {
-			$('.grid-item:visible').show();
+			$('.member:visible').show();
 
 		}
 		$grid.masonry('layout'); // reset the layout

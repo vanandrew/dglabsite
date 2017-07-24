@@ -65,57 +65,6 @@ class lab_member(models.Model):
     def __unicode__(self):
         return self.last_name + ', ' + self.first_name
 
-# Create class for research
-class research(models.Model):
-    class Meta:
-        verbose_name = "Research"
-        verbose_name_plural = "Research"
-
-    # Title of Research
-    title = models.CharField(
-        max_length = 350,
-        unique = True,
-        verbose_name = "Title"
-    )
-
-    # Description of Research
-    description = models.TextField(
-        verbose_name = "Description"
-    )
-
-    # Return the name of the model
-    def __unicode__(self):
-        return self.title
-
-class research_image(models.Model):
-    class Meta:
-        verbose_name = "Research Image"
-
-    # Create foreign key to research class
-    research = models.ForeignKey(
-        research,
-        on_delete=models.CASCADE
-    )
-
-    # Image Caption
-    caption = models.CharField(
-        max_length = 350,
-        blank = True,
-        verbose_name = "Caption"
-    )
-
-    # Research Photos
-    image = models.ImageField(
-        upload_to='research_images/',
-        null = True,
-        blank = True,
-        verbose_name = "Image"
-    )
-
-    # Return the name of the model
-    def __unicode__(self):
-        return self.image
-
 # Create class for publication
 class publication(models.Model):
     class Meta:
