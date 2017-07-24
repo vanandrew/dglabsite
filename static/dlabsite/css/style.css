@@ -1,11 +1,13 @@
 html, body {
 	height: 100%;
 }
+
 body {
 	font-family: 'Lato', sans-serif !important;
 	font-weight: 300;
 	font-size: 16px;
 }
+
 .container-fluid {
     padding-left: 0px;
     padding-right: 0px;
@@ -122,13 +124,52 @@ body {
 	font-size: 18px;
 }
 .research-text {
-	font-size: 30px;
+	font-size: 14px;
 }
 .project-text {
 	color: white;
-	font-size: 20px;
+	font-size: 10px;
 }
 .project-section {
 	background: black;
 	height: 150%;
+}
+@media only screen and (min-width : 768px) {
+	.research-text {
+		font-size: 24px;
+	}
+	.project-text {
+		color: white;
+		font-size: 20px;
+	}
+	.project-section {
+		background: black;
+		height: 150%;
+	}
+}
+@media only screen and (min-width : 992px) {
+	.research-text {
+		font-size: 28px;
+	}
+	.project-text {
+		color: white;
+		font-size: 24px;
+	}
+	.project-section {
+		background: black;
+		height: 150%;
+	}
+}
+@media only screen and (min-width : 1200px) {
+	.research-text {
+		font-size: 32px;
+	}
+	.project-text {
+		color: white;
+		font-size: 28px;
+	}
+	.project-section {
+		background: black;
+		height: 150%;
+	}
 }
