@@ -21,7 +21,8 @@ def research_page(request):
 # publications
 def publications_page(request):
     publications = publication.objects.all().order_by('-date')
-    return render(request, 'dlabsite/publications.html', {'publications': publications,'years': years})
+    years = publications.date('date','year').year
+    return render(request, 'dlabsite/publications.html', {'publications': publications, 'years': years})
 
 # data
 def data_page(request):
