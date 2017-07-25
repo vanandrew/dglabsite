@@ -21,8 +21,6 @@ def research_page(request):
 # publications
 def publications_page(request):
     publications = publication.objects.all().order_by('-date')
-    lastfiveyears = [datetime.now().year,datetime.now().year-1,datetime.now().year-2,datetime.now().year-3,datetime.now().year-4]
-    years = [year for year in lastfiveyears if year >= 2015]
     return render(request, 'dlabsite/publications.html', {'publications': publications,'years': years})
 
 # data
