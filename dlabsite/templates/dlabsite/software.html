@@ -23,13 +23,15 @@ class="active"
 </div>
 <div class="container" style="min-height: 700px;">
 	{% for listing in software %}
-	{% cycle '<div class="row">' '' '' %}
-		<div class="col-sm-4">
-			<div class="panel panel-default" style="visibility: hidden;">
-				<div class="panel-body">
+	<div class="row">
+		<div class="panel panel-default" style="visibility: hidden;">
+			<div class="panel-body">
+				<div class="col-lg-2">
 					{% if listing.image.url != '' %}
 					<a href="{{listing.link}}"><img class="img-responsive center-block" src="{{listing.image.url}}" width=300px></a>
 					{% endif %}
+				</div>
+				<div class="col-lg-10">
 					<p><h4>{{listing.title}}</h4></p>
 					{% autoescape off %}
 					{{listing.description}}
@@ -37,7 +39,7 @@ class="active"
 				</div>
 			</div>
 		</div>
-	{% cycle '' '' '</div>' %}
+	</div>
 	{% endfor %}
 </div>
 {% endblock %}
