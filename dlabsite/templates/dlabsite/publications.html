@@ -25,21 +25,9 @@ class="active"
 	{% for current_year in years %}
 	<div class="row pub-row" style="visibility: hidden;">
 		<div class="col-xs-3 col-xs-offset-1">
-			<h4>{{ current_year }}{% if forloop.last %} and older{% endif %}</h4>
+			<h4>{{ current_year }}</h4>
 		</div>
 	</div>
-	{% if forloop.last %}
-	{% for pub in publications %}
-	{% if pub.date.year <= current_year %}
-	<div class="row pub-row" style="visibility: hidden;">
-		<div class="col-xs-10 col-xs-offset-1">
-			<p>{% autoescape off %}{{ pub.container }}{% endautoescape %}{% for pub_link in pub.publication_link_set.all %}
-				[<a target="_blank" href="{{ pub_link.link }}">Link {{ forloop.counter }}</a>]{% endfor %}</p>
-		</div>
-	</div>
-	{% endif %}
-	{% endfor %}
-	{% else %}
 	{% for pub in publications %}
 	{% if pub.date.year == current_year %}
 	<div class="row pub-row" style="visibility: hidden;">
@@ -50,7 +38,6 @@ class="active"
 	</div>
 	{% endif %}
 	{% endfor %}
-	{% endif %}
 	{% endfor %}
 </div>
 {% endblock %}
