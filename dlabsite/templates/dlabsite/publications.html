@@ -16,7 +16,7 @@ class="active"
 			<div class="col-lg-8 col-lg-offset-2 text-center">
 				<h2>See our work</h2>
 				<hr>
-				<p class="sub-caption">Changing the world, one paper at a time.</p>
+				<p class="sub-caption">The brain. One paper at a time.</p>
 			</div>
 		</div>
 	</section>
@@ -33,7 +33,7 @@ class="active"
 	<div class="row pub-row" style="visibility: hidden;">
 		<div class="col-xs-10 col-xs-offset-1">
 			<p>{% autoescape off %}{{ pub.container }}{% endautoescape %}{% for pub_link in pub.publication_link_set.all %}
-				[<a target="_blank" href="{{ pub_link.link }}">Link {{ forloop.counter }}</a>]{% endfor %}</p>
+				[<a target="_blank" href="{{ pub_link.link }}">Article</a>]{% endfor %}</p>
 		</div>
 	</div>
 	{% endif %}
