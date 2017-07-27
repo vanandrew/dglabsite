@@ -36,8 +36,8 @@ def software_page(request):
     return render(request, 'dlabsite/software.html', {'software': software})
 
 # wiki
-def wiki_page(request):
-    return HttpResponseRedirect('http://10.20.94.224:778/')
+def wiki_page(request): 
+    return render(request, 'dlabsite/wiki.html')
 
 # directions
 def directions_page(request):

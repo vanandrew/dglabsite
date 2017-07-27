@@ -2,4 +2,7 @@
 dlabsite/migrations
 dlabsite/media
 media
+*.html~
 static/dlabsite/img/grp_photo.jpg
+*.png
+*.jpg

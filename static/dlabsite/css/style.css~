@@ -138,7 +138,7 @@ body {
 	font-size: 10px;
 }
 .project-img {
-	max-height: 200px;
+	max-height: 150px;
 }
 @media only screen and (min-height : 600px) and (min-width : 600px) {
 	.research-text {
@@ -149,7 +149,7 @@ body {
 		font-size: 22px;
 	}
 	.project-img {
-		max-height: 400px;
+		max-height: 300px;
 	}
 }
 @media only screen and (min-height : 900px) and (min-width : 900px) {
@@ -161,7 +161,7 @@ body {
 		font-size: 26px;
 	}
 	.project-img {
-		max-height: 500px;
+		max-height: 450px;
 	}
 }
 @media only screen and (min-height : 1200px) and (min-width : 1200px) {
@@ -173,6 +173,6 @@ body {
 		font-size: 30px;
 	}
 .	project-img {
-		max-height: 700px;
+		max-height: 600px;
 	}
 }

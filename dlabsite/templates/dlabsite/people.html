@@ -10,11 +10,12 @@ class="active"
 {% endblock %}
 
 {% block content %}
-<div class="container-fluid container-nav-clear animated fadeIn">
+<div class="container container-nav-clear animated fadeIn">
 	<section class="section">
 		<div class="row">
-			<div class="col-lg-8 col-lg-offset-2 text-center">
+			<div class="col-xs-12 text-center">
 				<h2>Meet the team</h2>
+				<p class="sub-caption">Washington University School of Medicine</p>
 				<img class="group-img img-responsive" src="{% static 'dlabsite/img/grp_photo.jpg' %}">
 				<hr>
 				<p class="sub-caption">Click on a portrait for a full profile.</p>
@@ -77,13 +78,13 @@ class="active"
 					<div class="col-xs-8">
 						<div class="row">
 							<h4 class="modal-title" id="myModalLabel">{{ person.first_name }} {{ person.last_name }}</h4>
-							{% if person.title != '' %}
+							{% if person.title != '' and person.title != None %}
 							<h5>Title: {{ person.title }}</h5>
 							{% endif %}
-							{% if person.email != '' %}
+							{% if person.email != '' and person.email != None %}
 							<h5>Email: {{ person.email }}</h5>
 							{% endif %}
-							{% if person.phone != '' %}
+							{% if person.phone != '' and person.phone != None %}
 							<h5>Phone: {{ person.phone }}</h5>
 							{% endif %}
 							{% autoescape off %}

@@ -17,14 +17,14 @@ class="active"
 {% block content %}
 <div class="container-fluid container-nav-clear animated fadeIn" style="height: 100%; display: table;">
 	<div class="intro row" style="display: table-cell; vertical-align: middle;">
-		<div class="col-lg-offset-2 col-lg-4 col-sm-offset-1 col-sm-5 col-xs-offset-1 col-xs-10">
+		<div class="col-xs-offset-1 col-xs-5">
 			<p class="research-text">Plasticity is one of the hallmark features of the human brain.
 				Use-driven plasticity is critically important for typical development as well as
 				recovering from brain injury. Thus, the overarching goal of our research
 				is to better understand use-driven brain plasticity. To this end we are
 				using various structural and functional MRI and behavioral phenotyping techniques.</p>
 		</div>
-		<div class="col-lg-offset-0 col-lg-4 col-sm-offset-0 col-sm-5 col-xs-offset-1 col-xs-10">
+		<div class="col-xs-offset-0 col-xs-5">
 			<p class="research-text">To properly study use-driven brain plasticity in humans, we must overcome a series of
 				exciting challenges. Hence, we have created a multi-pronged plan of attack and are
 				coming at this fascinating problem from several different angles.</h2>
@@ -32,10 +32,10 @@ class="active"
 		</div>
 	</div>
 </div>
-<div class="buffer1 container-fluid project-section"></div>
-<div class="container-fluid project-section">
-	<div class="project1 row">
-		<div class="col-sm-offset-1 col-sm-5 col-sm-push-5 col-xs-offset-1 col-xs-10">
+<div class="container-fluid project-section buffer1" style="height: 50%;"></div>
+<div class="container-fluid project-section project1">
+	<div class="row">
+		<div class="project-text-1 col-xs-offset-1 col-xs-5 col-xs-push-5 vcenter">
 			<p class="project-text"><strong>Real-time methods for improving MRI quality</strong></p>
 			<p class="project-text">A challenge common to all functional MRI research is the low signal-to-noise ratio of
 				blood oxygenation level dependent (BOLD) data and how easily it is distorted by head motion and drowsiness.
@@ -44,14 +44,14 @@ class="active"
 				real-time quality control. We are currently working on further improvements to FIRMM, as well as expanding
 				the approach to drowsiness monitoring and real-time feedback strategies to prevent head motion.</p>
 		</div>
-		<div class="col-sm-offset-0 col-sm-5 col-sm-pull-5 col-xs-offset-1 col-xs-10">
-			<img class="img-responsive center-block" max-width="500px" max-height="200px" src="{% static 'dlabsite/img/hmm.svg' %}">
+		<div class="col-xs-offset-0 col-xs-5 col-xs-pull-5 vcenter">
+			<img class="project-img img-responsive center-block" src="{% static 'dlabsite/img/FIRMM_logo_color_900x900.png' %}">
 		</div>
 	</div>
 </div>
 <div class="container-fluid project-section">
 	<div class="project2 row">
-		<div class="col-sm-offset-1 col-sm-5 col-xs-offset-1 col-xs-10">
+		<div class="project-text-2 col-xs-offset-1 col-xs-5 vcenter">
 			<p class="project-text"><strong>Precision functional mapping of individual human brains</strong></p>
 			<p class="project-text">Individual brains differ in the details of their network organization and use-driven plasticity further
 				adds to this functional brain diversity. Therefore, we have moved away from averaging neuroimaging data across
@@ -61,14 +61,14 @@ class="active"
 				of high quality, multi-modal MRI data in 10 young adults (24-34 yo; 5F). Even this small, fairly homogenous sample
 				already revealed common variants in the brain’s global network organization. </p>
 		</div>
-		<div class="col-sm-offset-0 col-sm-5 col-xs-offset-1 col-xs-10">
-			<img class="img-responsive center-block" max-width="500px" max-height="200px" src="{% static 'dlabsite/img/hmm.svg' %}">
+		<div class="col-xs-offset-0 col-xs-5 vcenter">
+			<img class="project-img img-responsive center-block" src="{% static 'dlabsite/img/brain_inverted.png' %}">
 		</div>
 	</div>
 </div>
 <div class="container-fluid project-section">
 	<div class="project3 row">
-		<div class="col-sm-offset-1 col-sm-5 col-sm-push-5 col-xs-offset-1 col-xs-10">
+		<div class="project-text-3 col-xs-offset-1 col-xs-5 col-xs-push-5 vcenter">
 			<p class="project-text"><strong>Perinatal stroke as a model of successful neuroplasticity</strong></p>
 			<p class="project-text">Perinatal stroke (22 wks gest. - 28 days) occurs in > 1/3,000 live births.
 				Some perinatal stroke survivors have no discernable deficits and many have only minimal impairments.
@@ -78,14 +78,14 @@ class="active"
 				structural damage. This information is critically important for developing therapies that can drive the brains of all
 				brain injury survivors towards a similarly efficient functional architecture, independent of age.</p>
 		</div>
-		<div class="col-sm-offset-0 col-sm-5 col-sm-pull-5 col-xs-offset-1 col-xs-10">
-			<img class="img-responsive center-block" max-width="500px" max-height="200px" src="{% static 'dlabsite/img/hmm.svg' %}">
+		<div class="col-xs-offset-0 col-xs-5 col-xs-pull-5 vcenter">
+			<img class="project-img img-responsive center-block" src="{% static 'dlabsite/img/CIMT011T_T1_2.png' %}">
 		</div>
 	</div>
 </div>
 <div class="container-fluid project-section">
 	<div class="project4 row">
-		<div class="col-sm-5 col-sm-offset-1 col-xs-offset-1 col-xs-10">
+		<div class="project-text-4 col-xs-offset-1 col-xs-5 vcenter">
 			<p class="project-text"><strong>Deep phenotyping</strong></p>
 			<p class="project-text">To understand how differences in functional brain organization relate to behavior and to learn how
 				brain structures and behavioral abilities change with practice, we must do a much better job tracking and measuring
@@ -95,27 +95,27 @@ class="active"
 				neuropsychological tests and the NIH Toolbox, we are also adding accelerometry which provides information about
 				sleep and activity levels to our adult studies.</p>
 		</div>
-		<div class="col-sm-offset-0 col-sm-5 col-xs-offset-1 col-xs-10">
-			<img class="img-responsive center-block" max-width="500px" max-height="200px" src="{% static 'dlabsite/img/hmm.svg' %}">
+		<div class="col-xs-offset-0 col-xs-5 vcenter">
+			<img class="project-img img-responsive center-block" src="{% static 'dlabsite/img/photo_1.jpg' %}">
 		</div>
 	</div>
 </div>
-<div class="container-fluid project-section lastsection" style="height: 200%;">
+<div class="container-fluid project-section last-section" style="height: 100%">
 	<div class="project5 row">
-		<div class="col-sm-offset-1 col-sm-5 col-sm-push-5 col-xs-offset-1 col-xs-10">
+		<div class="project-text-5 col-xs-offset-1 col-xs-5 col-xs-push-5 vcenter">
 			<p class="project-text"><strong>Plasticity interventions</strong></p>
 			<p class="project-text">Identifying and tracking plastic brain changes in single individuals requires a powerful intervention.
 				Therefore, we have been studying Constraint-Induced Movement Therapy (CIMT), which requires restricting the more mobile limb
 				with a cast, in children with chronic hemiparesis. We also adapted this treatment for the in-depth study of limb restriction
 				and accompanying brain changes in healthy young adults.</p>
 		</div>
-		<div class="col-sm-offset-0 col-sm-5 col-sm-pull-5 col-xs-offset-1 col-xs-10">
-			<img class="img-responsive center-block" max-width="500px" max-height="200px" src="{% static 'dlabsite/img/hmm.svg' %}">
+		<div class="col-xs-offset-0 col-xs-5 col-xs-pull-5 vcenter">
+			<img class="project-img img-responsive center-block" src="{% static 'dlabsite/img/Nico-002.jpg' %}">
 		</div>
 	</div>
 </div>
-<div class="container-fluid" style="height: 100%; display: table;">
-	<div class="outro row" style="display: table-cell; vertical-align: middle;">
+<div class="container-fluid outro" style="height: 100%; display: table;">
+	<div class="row outro-text" style="display: table-cell; vertical-align: middle;">
 		<div class="col-sm-offset-1 col-sm-10 col-xs-offset-1 col-xs-10">
 			<p class="research-text">The list of research areas above is far from exhaustive since our rate limiting factor is people-power,
 				not ideas. The general tenor of all the ideas/projects is that we are looking for better and more data per subject than most,
@@ -129,16 +129,18 @@ class="active"
 
 {% block scripts %}
 <script>
+	// Set fade scroll positions
 	$(window).scroll(function(){
 		$(".intro").css("opacity", 1 - ($(window).scrollTop()-60)/($(window).height()/2));
-		$(".buffer1").css("opacity", ($(window).scrollTop()-($(window).height()))/($(window).height()/2));
-		$(".project1").css("opacity", ($(window).scrollTop()-(1.75*$(window).height()))/($(window).height()/3));
-		$(".project2").css("opacity", ($(window).scrollTop()-(3.25*$(window).height()))/($(window).height()/3));
-		$(".project3").css("opacity", ($(window).scrollTop()-(4.75*$(window).height()))/($(window).height()/3));
-		$(".project4").css("opacity", ($(window).scrollTop()-(6.25*$(window).height()))/($(window).height()/3));
-		$(".project5").css("opacity", ($(window).scrollTop()-(7.75*$(window).height()))/($(window).height()/3));
-		$(".lastsection").css("opacity", 1 - ($(window).scrollTop()-(9*$(window).height()))/($(window).height()/2));
-		$(".outro").css("opacity", ($(window).scrollTop()-(9.75*$(window).height()))/($(window).height()/1.25));
+		$(".buffer1").css("opacity", ($(window).scrollTop()-1*$(window).height())/($(window).height()/3));
+		$(".project1").css("opacity", ($(window).scrollTop()-1*$(window).height())/($(window).height()/3));
+		$(".project2").css("opacity", ($(window).scrollTop()-2.25*$(window).height())/($(window).height()/3));
+		$(".project3").css("opacity", ($(window).scrollTop()-3.5*$(window).height())/($(window).height()/3));
+		$(".project4").css("opacity", ($(window).scrollTop()-4.75*$(window).height())/($(window).height()/3));
+		$(".project5").css("opacity", ($(window).scrollTop()-6*$(window).height())/($(window).height()/3));
+		$(".last-section").css("background", 'rgba(0,0,0,' + (1 - ($(window).scrollTop()-7*$(window).height())/($(window).height()/3)) + ')');
+		$(".outro").css("background", 'rgba(0,0,0,' + (1 - ($(window).scrollTop()-7*$(window).height())/($(window).height()/3)) + ')');
+		$(".outro-text").css("opacity", ($(window).scrollTop()-7*$(window).height())/($(window).height()/3));
 	});
 </script>
 {% endblock %}

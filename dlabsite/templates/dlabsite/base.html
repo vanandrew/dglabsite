@@ -34,7 +34,7 @@
 	</head>
 
 	<body>
-		<nav class="navbar navbar-default navbar-fixed-top" style="-webkit-animation-delay: 2s; animation-delay: 2s;">
+		<nav class="navbar navbar-default navbar-fixed-top" style="-webkit-animation-delay: 2s; animation-delay: 2s; max-height: 300px;">
 			<div class="container-fluid">
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -68,7 +68,7 @@
 							<a href="{% url 'dlabsite:software' %}" id="software">software</a>
 						</li>
 						<li {% block wiki %}{% endblock %}>
-							<a href="" id="wiki">wiki</a>
+							<a href="{% url 'dlabsite:wiki' %}" id="wiki">wiki</a>
 						</li>
 						<li {% block participate %}{% endblock %}>
 							<a href="{% url 'dlabsite:participate' %}" id="participate">participate</a>
@@ -117,7 +117,7 @@
 			navbar_click('#publications','{% url 'dlabsite:publications' %}','body>div,body>section');
 			navbar_click('#data','{% url 'dlabsite:data' %}','body>div,body>section');
 			navbar_click('#software','{% url 'dlabsite:software' %}','body>div,body>section');
-			//navbar_click('#wiki','{% url 'dlabsite:wiki' %}','body>div,body>section');
+			navbar_click('#wiki','{% url 'dlabsite:wiki' %}','body>div,body>section');
 			navbar_click('#directions','{% url 'dlabsite:directions' %}','body>div,body>section');
 			navbar_click('#participate','{% url 'dlabsite:participate' %}','body>div,body>section');
 			navbar_click('#careers','{% url 'dlabsite:careers' %}','body>div,body>section');

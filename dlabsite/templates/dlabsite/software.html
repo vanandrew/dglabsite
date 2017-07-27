@@ -26,12 +26,12 @@ class="active"
 	<div class="row">
 		<div class="panel panel-default" style="visibility: hidden;">
 			<div class="panel-body">
-				<div class="col-lg-2">
+				<div class="col-md-3 col-md-offset-0 col-xs-4 col-xs-offset-4 vcenter">
 					{% if listing.image.url != '' %}
 					<a href="{{listing.link}}"><img class="img-responsive center-block" src="{{listing.image.url}}" width=300px></a>
 					{% endif %}
-				</div>
-				<div class="col-lg-10">
+				</div><!--
+				--><div class="col-md-9 col-md-offset-0 col-xs-12 col-xs-offset-0 vcenter">
 					<p><h4>{{listing.title}}</h4></p>
 					{% autoescape off %}
 					{{listing.description}}
