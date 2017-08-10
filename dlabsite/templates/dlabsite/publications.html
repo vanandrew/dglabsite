@@ -37,8 +37,8 @@ class="active"
 	<div class="row pub-row" style="visibility: hidden;">
 		<div class="col-xs-10 col-xs-offset-1">
 			<p>{% autoescape off %}{{ pub.container }}{% endautoescape %}
-				{% if pub.paper.link != '' and pub.paper.link != None %}
-				[<a target="_blank" href="{{ pub.paper.link }}">PDF</a>]
+				{% if pub.paper.url != '' and pub.paper.url != None %}
+				[<a target="_blank" href="{{ pub.paper.url }}">PDF</a>]
 				{% endif %}
 				{% for pub_link in pub.publication_link_set.all %}
 				[<a target="_blank" href="{{ pub_link.link }}">Article</a>]
