@@ -37,6 +37,7 @@ class publicationadmin(admin.ModelAdmin):
                 'title',
                 'container',
                 'date',
+				'paper',
             )
         }),
     )

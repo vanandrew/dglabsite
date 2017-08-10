@@ -84,8 +84,16 @@ class publication(models.Model):
     )
 
     # Publication Date
-    date = models. DateField(
+    date = models.DateField(
         verbose_name = "Date Published"
+    )
+
+	# Paper Upload
+    paper = models.FileField(
+        upload_to = "papers/",
+        null = True,
+        blank = True,
+        verbose_name = "Paper"
     )
 
     # Return the name of the model
