@@ -6,3 +6,4 @@ media
 static/dlabsite/img/grp_photo.jpg
 *.png
 *.jpg
+*.pyc
