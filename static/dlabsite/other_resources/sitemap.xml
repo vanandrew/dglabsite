@@ -6,46 +6,46 @@
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 <url>
   <loc>http://dosenbachlab.wustl.edu/</loc>
-  <changefreq>never</changefreq>
+  <changefreq>daily</changefreq>
 </url>
 <url>
   <loc>http://dosenbachlab.wustl.edu/lab_members</loc>
-  <changefreq>never</changefreq>
+  <changefreq>daily</changefreq>
 </url>
 <url>
   <loc>http://dosenbachlab.wustl.edu/research</loc>
-  <changefreq>never</changefreq>
+  <changefreq>daily</changefreq>
 </url>
 <url>
   <loc>http://dosenbachlab.wustl.edu/publications</loc>
-  <changefreq>never</changefreq>
+  <changefreq>daily</changefreq>
 </url>
 <url>
   <loc>http://dosenbachlab.wustl.edu/data</loc>
-  <changefreq>never</changefreq>
+  <changefreq>daily</changefreq>
 </url>
 <url>
   <loc>http://dosenbachlab.wustl.edu/software</loc>
-  <changefreq>never</changefreq>
+  <changefreq>daily</changefreq>
 </url>
 <url>
   <loc>http://dosenbachlab.wustl.edu/wiki</loc>
-  <changefreq>never</changefreq>
+  <changefreq>daily</changefreq>
 </url>
 <url>
   <loc>http://dosenbachlab.wustl.edu/participate</loc>
-  <changefreq>never</changefreq>
+  <changefreq>daily</changefreq>
 </url>
 <url>
   <loc>http://dosenbachlab.wustl.edu/careers</loc>
-  <changefreq>never</changefreq>
+  <changefreq>daily</changefreq>
 </url>
 <url>
   <loc>http://dosenbachlab.wustl.edu/directions</loc>
-  <changefreq>never</changefreq>
+  <changefreq>daily</changefreq>
 </url>
 <url>
   <loc>http://dosenbachlab.wustl.edu/contact</loc>
-  <changefreq>never</changefreq>
+  <changefreq>daily</changefreq>
 </url>
 </urlset>
