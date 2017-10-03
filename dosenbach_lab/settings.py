@@ -27,8 +27,9 @@ DEBUG = False
 if DEBUG == False:
     SECURE_CONTENT_TYPE_NOSNIFF = True
     SECURE_SSL_REDIRECT = True
+else:
+    THUMBNAIL_DEBUG = True
 ALLOWED_HOSTS = ['dosenbachlab.wustl.edu','127.0.0.1','localhost']
-
 
 # Application definition
 

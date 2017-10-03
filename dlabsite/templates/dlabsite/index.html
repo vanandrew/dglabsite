@@ -13,12 +13,6 @@ Home
 <meta name="google-site-verification" content="YR6jJfS5YsuTwlpIb8Tojy7WFQDlq3ihFtiD1ga5Dls" />
 <!-- Reset Position of the page on refresh -->
 <script>window.onload = function() {setTimeout (function () {scrollTo(0,0);}, 100);}</script>
-<!-- Check if came from sibling pages -->
-<script src="{% static 'dlabsite/js/sibling.js' %}"></script>
-<script>sibling(['{% url 'dlabsite:people' %}','{% url 'dlabsite:research' %}',
-'{% url 'dlabsite:publications' %}','{% url 'dlabsite:data' %}',
-'{% url 'dlabsite:software' %}','wiki','{% url 'dlabsite:participate' %}',
-'{% url 'dlabsite:directions' %}','{% url 'dlabsite:careers' %}','{% url 'dlabsite:contact' %}'])</script>
 {% endblock %}
 
 {% block home %}
