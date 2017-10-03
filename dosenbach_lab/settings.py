@@ -11,10 +11,10 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
 import os
+from django.core.urlresolvers import reverse_lazy
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
@@ -27,7 +27,7 @@ DEBUG = False
 if DEBUG == False:
     SECURE_CONTENT_TYPE_NOSNIFF = True
     SECURE_SSL_REDIRECT = True
-ALLOWED_HOSTS = ['dosenbachlab.wustl.edu','127.0.0.1']
+ALLOWED_HOSTS = ['dosenbachlab.wustl.edu','127.0.0.1','localhost']
 
 
 # Application definition
@@ -41,6 +41,17 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'dlabsite.apps.DlabsiteConfig',
     'django_cleanup',
+    'django.contrib.sites',
+    'django.contrib.humanize',
+    'django_nyt',
+    'mptt',
+    'sekizai',
+    'sorl.thumbnail',
+    'wiki',
+    'wiki.plugins.attachments',
+    'wiki.plugins.notifications',
+    'wiki.plugins.images',
+    'wiki.plugins.macros',
 ]
 
 MIDDLEWARE = [
@@ -58,18 +69,29 @@ ROOT_URLCONF = 'dosenbach_lab.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR,'dgwiki'),],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
+                'django.template.context_processors.debug',
+                'django.template.context_processors.i18n',
+                'django.template.context_processors.media',
+                'django.template.context_processors.request',
+                'django.template.context_processors.static',
+                'django.template.context_processors.tz',
                 'django.contrib.messages.context_processors.messages',
+                "sekizai.context_processors.sekizai",
             ],
         },
     },
 ]
+
+# Settings for django wiki
+SITE_ID = 1
+WIKI_ACCOUNT_HANDLING = True
+WIKI_ACCOUNT_SIGNUP_ALLOWED = True
+LOGIN_REDIRECT_URL = reverse_lazy('wiki:get', kwargs={'path': ''})
 
 WSGI_APPLICATION = 'dosenbach_lab.wsgi.application'
 

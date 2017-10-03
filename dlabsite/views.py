@@ -35,10 +35,6 @@ def software_page(request):
     software = software_listing.objects.all().order_by('title')
     return render(request, 'dlabsite/software.html', {'software': software})
 
-# wiki
-def wiki_page(request): 
-    return render(request, 'dlabsite/wiki.html')
-
 # directions
 def directions_page(request):
     return render(request, 'dlabsite/directions.html')
