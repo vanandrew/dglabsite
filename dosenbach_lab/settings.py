@@ -26,6 +26,7 @@ SECRET_KEY = '*q7bkc@+1(x*i-=mi77k4%!%!(($-#pw5#g0x4@&cywod7qagl'
 DEBUG = False
 if DEBUG == False:
     SECURE_CONTENT_TYPE_NOSNIFF = True
+    SECURE_SSL_REDIRECT = True
 ALLOWED_HOSTS = ['dosenbachlab.wustl.edu','127.0.0.1']
 
 
