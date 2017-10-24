@@ -74,7 +74,7 @@ class="active"
 				<div class="row">
 					<div class="col-xs-4">
 						{% if person.photo.url != '' %}
-						<img class="img-responsive" src="{{person.photo.url}}" data-toggle="modal" data-target="#person_{{ forloop.counter0 }}">
+						<img style="width: 200px; height: 300px;" src="{{person.photo.url}}" data-toggle="modal" data-target="#person_{{ forloop.counter0 }}">
 						{% else %}
 						<img class="img-responsive" src="{% static 'dlabsite/img/photonotavailable.gif' %}" data-toggle="modal" data-target="#person_{{ forloop.counter0 }}">
 						{% endif %}
