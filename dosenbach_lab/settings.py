@@ -29,7 +29,7 @@ if DEBUG == False:
     SECURE_SSL_REDIRECT = True
 else:
     THUMBNAIL_DEBUG = True
-ALLOWED_HOSTS = ['dosenbachlab.wustl.edu','127.0.0.1','localhost']
+ALLOWED_HOSTS = ['greenelab.wustl.edu','127.0.0.1','localhost']
 
 # Application definition
 
