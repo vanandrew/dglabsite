@@ -22,5 +22,4 @@ from django_nyt.urls import get_pattern as get_nyt_pattern
 urlpatterns = [
     url(r'^@dmin/', admin.site.urls), # URL to admin site
     url(r'^', include('dlabsite.urls')), # Make dlabsite the root directory
-    url(r'^notifications/', get_nyt_pattern()),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

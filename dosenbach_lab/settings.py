@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '*q7bkc@+1(x*i-=mi77k4%!%!(($-#pw5#g0x4@&cywod7qagl'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 if DEBUG == False:
     SECURE_CONTENT_TYPE_NOSNIFF = True
     SECURE_SSL_REDIRECT = True
@@ -89,10 +89,10 @@ TEMPLATES = [
 ]
 
 # Settings for django wiki
-SITE_ID = 1
-WIKI_ACCOUNT_HANDLING = True
-WIKI_ACCOUNT_SIGNUP_ALLOWED = True
-LOGIN_REDIRECT_URL = reverse_lazy('wiki:get', kwargs={'path': ''})
+#SITE_ID = 1
+#WIKI_ACCOUNT_HANDLING = True
+#WIKI_ACCOUNT_SIGNUP_ALLOWED = True
+#LOGIN_REDIRECT_URL = reverse_lazy('wiki:get', kwargs={'path': ''})
 
 WSGI_APPLICATION = 'dosenbach_lab.wsgi.application'
 

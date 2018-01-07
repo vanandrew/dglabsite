@@ -6,6 +6,9 @@
     <body style="margin:0px 0px; background:black;">
         <div class="canvas-container" style="position:absolute; width:100%; height:100%;">
         </div>
+        <div class="load-text" style="position:absolute; z-index:100; top:45%; left:45%">
+            <p style="font-family:'Comfortaa',cursive; color:white; font-size:24px;">Loading...</p>
+        </div>
         <div style="position:absolute; z-index:100; bottom:5%; left:5%;">
             <p style="font-family:'Comfortaa',cursive; color:white; font-size:72px;">greene lab</p>
             <p style="font-family:'Comfortaa',cursive; color:white; font-size:24px;">coming soon...</p>
@@ -22,6 +25,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/89/three.min.js"></script>
         <script src="{% static 'dlabsite/js/OrbitControls.js' %}"></script>
         <script>
+
+
         // Setup renderer
         var renderer = new THREE.WebGLRenderer();
         renderer.setSize($('body').width(),$('body').height());
@@ -37,10 +42,13 @@
         controls.autoRotate = true;
 
         // Make pial geometry for each hemisphere
-        var left_pial = make_pial_geometry(data);
-        var right_pial = make_pial_geometry(data2);
-        scene.add(new THREE.Mesh(left_pial,new THREE.MeshNormalMaterial({wireframe:false})));
-        scene.add(new THREE.Mesh(right_pial,new THREE.MeshNormalMaterial({wireframe:true})));
+        $.get('{% url 'dlabsite:load_pial_data' %}', function(data) {
+            var left_pial = make_pial_geometry(data['data']);
+            var right_pial = make_pial_geometry(data['data2']);
+            scene.add(new THREE.Mesh(left_pial,new THREE.MeshNormalMaterial({wireframe:false})));
+            scene.add(new THREE.Mesh(right_pial,new THREE.MeshNormalMaterial({wireframe:true})));
+            $('.load-text').fadeOut();
+        })
 
         // Render loop
         function animate() {
