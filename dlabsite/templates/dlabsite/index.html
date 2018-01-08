@@ -2,11 +2,14 @@
 <html>
     <head>
         <link href="https://fonts.googleapis.com/css?family=Comfortaa:300" rel="stylesheet">
+        <link href="{% static 'dlabsite/css/whirl.min.css' %}" rel="stylesheet">
     </head>
     <body style="margin:0px 0px; background:black;">
         <div class="canvas-container" style="position:absolute; width:100%; height:100%;">
         </div>
         <div class="load-text" style="position:absolute; z-index:100; top:45%; left:45%">
+            <p class="whirl traditional no-overlay"></p>
+            <br>
             <p style="font-family:'Comfortaa',cursive; color:white; font-size:24px;">Loading...</p>
         </div>
         <div style="position:absolute; z-index:100; bottom:5%; left:5%;">
