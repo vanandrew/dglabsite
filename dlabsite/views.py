@@ -5,19 +5,10 @@ from .models import (lab_member, publication, job_listing,
 from datetime import datetime
 import json
 import os
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # homepage
 def home_page(request):
     return render(request, 'dlabsite/index.html')
-
-# load surface data
-def load_pial_data(request):
-    with open(os.path.join(BASE_DIR,'static','dlabsite','js','lh.pial.json'),'r') as datafile:
-        data = json.load(datafile);
-    with open(os.path.join(BASE_DIR,'static','dlabsite','js','rh.pial.json'),'r') as datafile:
-        data2 = json.load(datafile);
-    return JsonResponse({'data':data, 'data2':data2})
 
 # lab member page
 def people_page(request):

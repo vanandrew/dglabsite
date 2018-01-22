@@ -13,5 +13,4 @@ urlpatterns = [
     url(r'^participate', views.participate_page, name='participate'),
     url(r'^careers', views.careers_page, name='careers'),
     url(r'^contact', views.contact_page, name='contact'),
-    url(r'^load_pial_data', views.load_pial_data, name='load_pial_data'),
 ]
