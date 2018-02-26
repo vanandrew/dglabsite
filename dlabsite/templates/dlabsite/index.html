@@ -10,15 +10,15 @@
 	<title>Greene Lab</title>
         <link href="https://fonts.googleapis.com/css?family=Comfortaa:300" rel="stylesheet">
         <script data-pace-options='{"ajax": false, "elements": false}' src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/white/pace-theme-center-circle.min.css" rel="stylesheet">
+        <link href="{% static 'dlabsite/css/pace-theme-center-circle.min.css' %}" rel="stylesheet">
     </head>
-    <body style="margin:0px 0px; width:100%; height:100%; background:black;">
+    <body style="margin:0px 0px; width:100%; height:100%; background:yellow;">
         <div class="canvas-container" style="position:absolute; width:100%; height:100%;">
         </div>
         <div id="rotator" style="height:100px;width:100px"></div>
         <div style="position:absolute; z-index:100; bottom:5%; left:5%;">
-            <p style="font-family:'Comfortaa',cursive; color:white; font-size:8vmin;">greene lab</p>
-            <p style="font-family:'Comfortaa',cursive; color:white; font-size:3vmin;">coming soon...</p>
+            <p style="font-family:'Comfortaa',cursive; color:black; font-size:8vmin;">greene lab</p>
+            <p style="font-family:'Comfortaa',cursive; color:black; font-size:3vmin;">coming soon...</p>
         </div>
         <div style="position:absolute; z-index:100; bottom:5%; right:5%;">
             <!--button>Enter Site</button-->
@@ -42,9 +42,9 @@
         renderer.setSize($('body').width(),$('body').height());
         $('.canvas-container').append(renderer.domElement);
 
-	// Setup scene
-	var scene = new THREE.Scene();
-	scene.background = new THREE.Color(0xffffff);
+        // Setup scene
+        var scene = new THREE.Scene();
+        scene.background = new THREE.Color(0xffff00);
 
     	// Setup lighting
     	var light = new THREE.PointLight(0xffffff,1,800);
