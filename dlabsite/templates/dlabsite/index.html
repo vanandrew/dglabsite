@@ -42,8 +42,9 @@
         renderer.setSize($('body').width(),$('body').height());
         $('.canvas-container').append(renderer.domElement);
 
-	    // Setup scene
-	    var scene = new THREE.Scene();
+	// Setup scene
+	var scene = new THREE.Scene();
+	scene.background = new THREE.Color(0xffffff);
 
     	// Setup lighting
     	var light = new THREE.PointLight(0xffffff,1,800);
