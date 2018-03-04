@@ -4,6 +4,7 @@ from . import views
 app_name = 'dlabsite'
 urlpatterns = [
     url(r'^$', views.home_page, name='homepage'),
+    url(r'^index', views.index_page, name='index'),
     url(r'^lab_members', views.people_page, name='people'),
     url(r'^research', views.research_page, name='research'),
     url(r'^publications', views.publications_page, name='publications'),

@@ -1,0 +1,60 @@
+{% load staticfiles %}
+<html>
+    <head>
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <meta name="description" content="Lab webpage for the Greene Lab at Washington University in St. Louis School of Medicine">
+        <meta name="author" content="Andrew Van">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Greene Lab</title>
+        <link href="https://fonts.googleapis.com/css?family=Comfortaa:300" rel="stylesheet">
+        <link href="{% static 'dlabsite/css/foundation.css' %}" rel="stylesheet">
+    </head>
+    <body>
+        <div class="title-bar" data-responsive-toggle="nav-menu" data-hide-for="Large">
+            <div class="hamburger hamburger-custom" data-toggle="nav-menu">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </div>
+            <div class="title-bar-title"><a href="{% url 'dlabsite:homepage' %}">greene lab</a></div>
+        </div>
+
+        <div class="top-bar" id="nav-menu" data-animate="slide-in-left slide-out-left" style="height:100%;width:max-content;z-index:100;position:absolute;display:none">
+            <div class="top-bar-left" style="height:100%;">
+                <ul class="vertical menu" data-dropdown-menu>
+                    <li class="option"><a style="color: #0a0a0a;" href="{% url 'dlabsite:index' %}">home</a></li>
+                    <li class="option"><a style="color: #0a0a0a;" href="{% url 'dlabsite:people' %}">lab members</a></li>
+                    <li class="option"><a style="color: #0a0a0a;" href="{% url 'dlabsite:research' %}">research</a></li>
+                    <li class="option"><a style="color: #0a0a0a;" href="{% url 'dlabsite:publications' %}">publications</a></li>
+                    <li class="option"><a style="color: #0a0a0a;" href="{% url 'dlabsite:data' %}">data</a></li>
+                    <li class="option"><a style="color: #0a0a0a;" href="{% url 'dlabsite:software' %}">software</a></li>
+                    <li class="option"><a style="color: #0a0a0a;" href="{% url 'dlabsite:directions' %}">wiki</a></li>
+                    <li class="option"><a style="color: #0a0a0a;" href="{% url 'dlabsite:participate' %}">careers</a></li>
+                    <li class="option"><a style="color: #0a0a0a;" href="{% url 'dlabsite:careers' %}">directions</a></li>
+                    <li class="option"><a style="color: #0a0a0a;" href="{% url 'dlabsite:contact' %}">contact</a></li>
+                </ul>
+            </div>
+            <div class="top-bar-right">
+            </div>
+        </div>
+
+        {% block content %}
+        {% endblock %}
+
+    <!-- Scripts -->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.min.js"
+      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      crossorigin="anonymous"></script>
+    <script src="{% static 'dlabsite/js/foundation.js' %}"></script>
+    <script>
+        $(document).ready(function(){
+            $(document).foundation();
+            $(".hamburger").click(function(){
+                $(this).toggleClass("is-active");
+            });
+        });
+    </script>
+    </body>
+</html>
