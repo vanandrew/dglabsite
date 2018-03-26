@@ -12,30 +12,35 @@
         <link href="{% static 'dlabsite/css/foundation.css' %}" rel="stylesheet">
     </head>
     <body>
-        <div class="title-bar" data-responsive-toggle="nav-menu" data-hide-for="Large" style="z-index:100;position:absolute;">
-            <div class="hamburger hamburger-custom" data-toggle="nav-menu">
-                <span class="line"></span>
-                <span class="line"></span>
-                <span class="line"></span>
+        <div data-sticky-container></div>
+        <div class="sticky" style="z-index:100;" data-sticky data-margin-top="0">
+            <div class="title-bar" data-responsive-toggle="nav-menu" data-hide-for="Large" style="position:absolute;">
+                <div class="hamburger hamburger-custom" data-toggle="nav-menu">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </div>
             </div>
         </div>
 
-        <div class="top-bar" id="nav-menu" data-animate="slide-in-left slide-out-left" style="height:100%;width:max-content;z-index:50;position:absolute;display:none">
-            <div class="top-bar-left" style="height:100%;padding-top:75px;">
-                <ul class="vertical menu" data-dropdown-menu>
-                    <li class="option"><a style="color: #0a0a0a;" href="{% url 'dlabsite:index' %}">home</a></li>
-                    <li class="option"><a style="color: #0a0a0a;" href="{% url 'dlabsite:people' %}">lab members</a></li>
-                    <li class="option"><a style="color: #0a0a0a;" href="{% url 'dlabsite:research' %}">research</a></li>
-                    <li class="option"><a style="color: #0a0a0a;" href="{% url 'dlabsite:publications' %}">publications</a></li>
-                    <li class="option"><a style="color: #0a0a0a;" href="{% url 'dlabsite:data' %}">data</a></li>
-                    <li class="option"><a style="color: #0a0a0a;" href="{% url 'dlabsite:software' %}">software</a></li>
-                    <li class="option"><a style="color: #0a0a0a;" href="{% url 'dlabsite:directions' %}">wiki</a></li>
-                    <li class="option"><a style="color: #0a0a0a;" href="{% url 'dlabsite:participate' %}">careers</a></li>
-                    <li class="option"><a style="color: #0a0a0a;" href="{% url 'dlabsite:careers' %}">directions</a></li>
-                    <li class="option"><a style="color: #0a0a0a;" href="{% url 'dlabsite:contact' %}">contact</a></li>
-                </ul>
-            </div>
-            <div class="top-bar-right">
+        <div class=sticky style="z-index:50;" data-sticky data-margin-top="0">
+            <div class="top-bar" id="nav-menu" data-animate="slide-in-left slide-out-left" style="height:100vh;width:max-content;position:absolute;display:none">
+                <div class="top-bar-left" style="height:100%;padding-top:75px;">
+                    <ul class="vertical menu" data-dropdown-menu>
+                        <li class="option"><a style="color: #0a0a0a;" href="{% url 'dlabsite:index' %}">home</a></li>
+                        <li class="option"><a style="color: #0a0a0a;" href="{% url 'dlabsite:people' %}">lab members</a></li>
+                        <li class="option"><a style="color: #0a0a0a;" href="{% url 'dlabsite:research' %}">research</a></li>
+                        <li class="option"><a style="color: #0a0a0a;" href="{% url 'dlabsite:publications' %}">publications</a></li>
+                        <li class="option"><a style="color: #0a0a0a;" href="{% url 'dlabsite:data' %}">data</a></li>
+                        <li class="option"><a style="color: #0a0a0a;" href="{% url 'dlabsite:software' %}">software</a></li>
+                        <li class="option"><a style="color: #0a0a0a;" href="https://dosenbachlab.wustl.edu/wiki/">wiki</a></li>
+                        <li class="option"><a style="color: #0a0a0a;" href="{% url 'dlabsite:careers' %}">careers</a></li>
+                        <li class="option"><a style="color: #0a0a0a;" href="{% url 'dlabsite:directions' %}">directions</a></li>
+                        <li class="option"><a style="color: #0a0a0a;" href="{% url 'dlabsite:contact' %}">contact</a></li>
+                    </ul>
+                </div>
+                <div class="top-bar-right">
+                </div>
             </div>
         </div>
 

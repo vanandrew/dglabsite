@@ -14,15 +14,12 @@
         <link href="{% static 'dlabsite/css/foundation.css' %}" rel="stylesheet">
     </head>
     <body style="margin:0px 0px;height:100%;background:#BFD8D2;overflow:hidden;">
-        <div class="grid-container fluid canvas-container" style="height:100%;">
+        <div class="grid-container fluid canvas-container grid-frame">
         </div>
         <div id="rotator" style="height:100px;width:100px"></div>
         <div style="position:absolute; z-index:100; bottom:5%; left:5%;">
             <p style="font-size:8vmin;">greene lab</p>
             <a href="{% url 'dlabsite:index' %}" class="button custom" style="font-size:3vmin;">enter site</a>
-        </div>
-        <div style="position:absolute; z-index:100; bottom:5%; right:5%;">
-            <!--button>Enter Site</button-->
         </div>
 
         <!-- Javascript -->
