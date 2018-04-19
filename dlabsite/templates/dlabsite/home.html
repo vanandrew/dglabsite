@@ -28,12 +28,8 @@
           integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
           crossorigin="anonymous"></script>
         <script src="{% static 'dlabsite/js/foundation.js' %}"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/89/three.min.js"></script>
-        <script src="https://cdn.rawgit.com/vanandrew/cgbraindata/master/lh.aparc.a2009s.annot.json.min.js"></script>
-        <script src="https://cdn.rawgit.com/vanandrew/cgbraindata/master/rh.aparc.a2009s.annot.json.min.js"></script>
-        <script src="https://cdn.rawgit.com/vanandrew/cgbraindata/master/lh.pial.json.min.js"></script>
-        <script src="https://cdn.rawgit.com/vanandrew/cgbraindata/master/rh.pial.json.min.js"></script>
-	    <script src="{% static 'dlabsite/js/OrbitControls.js' %}"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/92/three.min.js"></script>
+	    <script src="{% static 'dlabsite/js/OrbitControls.js' %}"></script>s
         <script>
 
         // Setup renderer
@@ -71,12 +67,27 @@
         var controls = new THREE.OrbitControls(camera);
         controls.autoRotate = false;
 
-        // Make pial geometry for each hemisphere
-        var left_pial = make_pial_geometry(lhdata,lhcolor);
-        var right_pial = make_pial_geometry(rhdata,rhcolor);
-        scene.add(new THREE.Mesh(left_pial,new THREE.MeshLambertMaterial({vertexColors:THREE.VertexColors})));
-        scene.add(new THREE.Mesh(right_pial,new THREE.MeshLambertMaterial({vertexColors:THREE.VertexColors})));
-        $('.load-text').fadeOut();
+        // load geometries
+        var loader = new THREE.JSONLoader();
+        var left_pial; var right_pial;    
+        loader.load(
+            "{% static 'dlabsite/js/left_pial.json' %}",
+            function(geometry) {
+                left_pial = geometry;
+                scene.add(new THREE.Mesh(left_pial,new THREE.MeshLambertMaterial({vertexColors:THREE.VertexColors})));
+            },
+            function(xhr) {},
+            function(err) { console.log(err); }
+        );    
+        loader.load(
+            "{% static 'dlabsite/js/right_pial.json' %}",
+            function(geometry) {
+                right_pial = geometry;
+                scene.add(new THREE.Mesh(right_pial,new THREE.MeshLambertMaterial({vertexColors:THREE.VertexColors})));
+            },
+            function(xhr) {},
+            function(err) { console.log(err); }
+        );
 
         // Render loop
         function animate() {
@@ -98,48 +109,6 @@
             renderer.setSize($('body').width(),$('body').height());
         });
 
-        // Draw pial surface geometry
-        function make_pial_geometry(pialdata,hemicolor) {
-            // Setup Geometry
-            var geometry = new THREE.Geometry();
-            for (var i = 0; i < pialdata.vertices.length; i++) {
-                // Define vertices
-                geometry.vertices.push(
-                    new THREE.Vector3(
-                        pialdata.vertices[i][1],
-                        pialdata.vertices[i][2],
-                        pialdata.vertices[i][0]
-                    )
-                );
-            }
-            for (var i = 0; i < pialdata.faces.length; i++) {
-    		// get color for each vertex
-    		let color0 = hemicolor['vertexcolor'][pialdata.faces[i][0]].slice(0,3);
-    		let color1 = hemicolor['vertexcolor'][pialdata.faces[i][1]].slice(0,3);
-    		let color2 = hemicolor['vertexcolor'][pialdata.faces[i][2]].slice(0,3);
-
-                // Define faces
-                geometry.faces.push(
-                    new THREE.Face3(
-                        pialdata.faces[i][1],
-                        pialdata.faces[i][2],
-                        pialdata.faces[i][0],
-                        null,
-                        [
-                            new THREE.Color(color1[0]/255,color1[1]/255,color1[2]/255),
-                            new THREE.Color(color2[0]/255,color2[1]/255,color2[2]/255),
-                            new THREE.Color(color0[0]/255,color0[1]/255,color0[2]/255),
-                        ]
-                    )
-                )
-            }
-            // compute vertex and face normals
-            geometry.computeFaceNormals();
-            geometry.computeVertexNormals();
-
-            // return geometry
-            return geometry;
-        }
         </script>
     </body>
 </html>
