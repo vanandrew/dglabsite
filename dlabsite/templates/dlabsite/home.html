@@ -9,7 +9,7 @@
     	<meta name="viewport" content="width=device-width, initial-scale=1">
     	<title>Greene Lab</title>
         <link href="https://fonts.googleapis.com/css?family=Comfortaa:300" rel="stylesheet">
-        <script data-pace-options='{"ajax": false, "elements": false}' src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
+        <script data-pace-options='{"ajax": true, "elements": false}' src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
         <link href="{% static 'dlabsite/css/pace-theme-center-circle.min.css' %}" rel="stylesheet">
         <link href="{% static 'dlabsite/css/foundation.css' %}" rel="stylesheet">
     </head>
@@ -71,36 +71,41 @@
         var loader = new THREE.JSONLoader();
         var left_pial; var right_pial;    
         loader.load(
-            "{% static 'dlabsite/js/left_pial.json' %}",
+            "https://cdn.rawgit.com/vanandrew/dglabsite/greene/static/dlabsite/js/left_pial.json",
             function(geometry) {
                 left_pial = geometry;
                 scene.add(new THREE.Mesh(left_pial,new THREE.MeshLambertMaterial({vertexColors:THREE.VertexColors})));
-            },
-            function(xhr) {},
-            function(err) { console.log(err); }
-        );    
-        loader.load(
-            "{% static 'dlabsite/js/right_pial.json' %}",
-            function(geometry) {
-                right_pial = geometry;
-                scene.add(new THREE.Mesh(right_pial,new THREE.MeshLambertMaterial({vertexColors:THREE.VertexColors})));
+                loader.load(
+                    "https://cdn.rawgit.com/vanandrew/dglabsite/greene/static/dlabsite/js/right_pial.json",
+                    function(geometry) {
+                        right_pial = geometry;
+                        scene.add(new THREE.Mesh(right_pial,new THREE.MeshLambertMaterial({vertexColors:THREE.VertexColors})));
+                        render_loop();
+                    },
+                    function(xhr) {},
+                    function(err) { console.log(err); }
+                );
             },
             function(xhr) {},
             function(err) { console.log(err); }
         );
 
-        // Render loop
-        function animate() {
-        	requestAnimationFrame(animate);
-            controls.update();
-            render();
+        function render_loop() {
+            // Render loop
+            function animate() {
+            	requestAnimationFrame(animate);
+                controls.update();
+                render();
+            }
+            animate();
         }
-        animate();
 
         // Render function
         function render() {
             renderer.render(scene,camera);
         }
+        // render background first
+        render();
 
         // resize renderer and camera on window resize
         $(window).resize(function() {
