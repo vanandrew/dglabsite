@@ -8,10 +8,6 @@ import os
 
 # homepage
 def home_page(request):
-    return render(request, 'dlabsite/home.html')
-
-# index homepage
-def index_page(request):
     return render(request, 'dlabsite/index.html')
 
 # lab member page

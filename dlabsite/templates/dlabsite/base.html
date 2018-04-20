@@ -10,10 +10,18 @@
         <title>Greene Lab</title>
         <link href="https://fonts.googleapis.com/css?family=Comfortaa:300" rel="stylesheet">
         <link href="{% static 'dlabsite/css/foundation.css' %}" rel="stylesheet">
+        {% block head %}
+        {% endblock %}
+        <style>
+        .option {
+            margin: 0 100px 10px 30px;
+            border-top: none;
+        }
+        </style>
     </head>
     <body>
         <div data-sticky-container></div>
-        <div class="sticky" style="z-index:100;" data-sticky data-margin-top="0">
+        <div class="sticky" style="z-index:300;" data-sticky data-margin-top="0">
             <div class="title-bar" data-responsive-toggle="nav-menu" data-hide-for="Large" style="position:absolute;">
                 <div class="hamburger hamburger-custom" data-toggle="nav-menu">
                     <span class="line"></span>
@@ -23,11 +31,11 @@
             </div>
         </div>
 
-        <div class=sticky style="z-index:50;" data-sticky data-margin-top="0">
+        <div class=sticky style="z-index:200;" data-sticky data-margin-top="0">
             <div class="top-bar" id="nav-menu" data-animate="slide-in-left slide-out-left" style="height:100vh;width:max-content;position:absolute;display:none">
                 <div class="top-bar-left" style="height:100%;padding-top:75px;">
                     <ul class="vertical menu" data-dropdown-menu>
-                        <li class="option"><a style="color: #0a0a0a;" href="{% url 'dlabsite:index' %}">home</a></li>
+                        <li class="option"><a style="color: #0a0a0a;" href="{% url 'dlabsite:homepage' %}">home</a></li>
                         <li class="option"><a style="color: #0a0a0a;" href="{% url 'dlabsite:people' %}">lab members</a></li>
                         <li class="option"><a style="color: #0a0a0a;" href="{% url 'dlabsite:research' %}">research</a></li>
                         <li class="option"><a style="color: #0a0a0a;" href="{% url 'dlabsite:publications' %}">publications</a></li>
@@ -61,5 +69,7 @@
             });
         });
     </script>
+    {% block scripts %}
+    {% endblock %}
     </body>
 </html>
