@@ -121,6 +121,7 @@ var camera = new THREE.PerspectiveCamera(75,$('.main-block').width()/$('.main-bl
 camera.position.z = 200;
 var controls = new THREE.OrbitControls(camera);
 controls.dispose(); // disable controls
+controls.autoRotate = true;
 controls.enablePan = false;
 controls.enableKeys = false;
 
