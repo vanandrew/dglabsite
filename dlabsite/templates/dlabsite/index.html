@@ -2,7 +2,7 @@
 {% load staticfiles %}
 
 {% block head %}
-<script data-pace-options='{"ajax": true, "elements": false}' src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
 <link href="{% static 'dlabsite/css/pace-theme-center-circle.min.css' %}" rel="stylesheet">
 {% endblock %}
 
@@ -12,6 +12,9 @@
         <div class="grid-y grid-frame align-center-middle primary main-block" style="height:100vh;width:100vw;background:#BFD8D2;">
             <div class="grid-container fluid canvas-container grid-frame"></div>
             <div id="rotator" style="height:100px;width:100px"></div>
+            <div style="position:absolute; z-index:100; bottom:5%; right:5%;">
+                <h4 class="region-display"></h4>
+            </div>
             <div style="position:absolute; z-index:100; bottom:5%; left:5%;">
                 <p class="title-text" style="font-size:8vmin;">greene lab</p>
                 <a id="interact" class="button custom" style="font-size:3vmin;">interact</a>
@@ -39,31 +42,19 @@
     </div>
     <div class="cell medium-12 large-6">
         <div class="grid-y grid-frame align-center-middle text-center" style="height:100vh;background:#DF744A;">
-            <h1><a style="color: black;" href="{% url 'dlabsite:data' %}">data</a></h1>
+            <h1><a style="color: black;" href="{% url 'dlabsite:data' %}">data/software</a></h1>
         </div>
     </div>
 </div>
 <div class="grid-x">
     <div class="cell medium-12 large-6">
-        <div class="grid-y grid-frame align-center-middle text-center" style="height:100vh;background:#F8EEE7;">
-            <h1><a style="color: black;" href="{% url 'dlabsite:software' %}">software</a></h1>
+        <div class="grid-y grid-frame align-center-middle text-center" style="height:100vh;background:#77C9D4;">
+            <h1><a style="color: black;" href="{% url 'dlabsite:directions' %}">directions</a></h1>
         </div>
     </div>
     <div class="cell medium-12 large-6">
         <div class="grid-y grid-frame align-center-middle text-center" style="height:100vh;background:#4484CE;">
             <h1><a style="color: black;" href="https://dosenbachlab.wustl.edu/wiki/">wiki</a></h1>
-        </div>
-    </div>
-</div>
-<div class="grid-x">
-    <div class="cell medium-12 large-6">
-        <div class="grid-y grid-frame align-center-middle text-center" style="height:100vh;background:#F19F4D;">
-            <h1><a style="color: black;" href="{% url 'dlabsite:careers' %}">careers</a></h1>
-        </div>
-    </div>
-    <div class="cell medium-12 large-6">
-        <div class="grid-y grid-frame align-center-middle text-center" style="height:100vh;background:#77C9D4;">
-            <h1><a style="color: black;" href="{% url 'dlabsite:directions' %}">directions</a></h1>
         </div>
     </div>
 </div>
@@ -84,7 +75,8 @@
   crossorigin="anonymous"></script>
 <script src="{% static 'dlabsite/js/foundation.js' %}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/92/three.min.js"></script>
-<script src="{% static 'dlabsite/js/OrbitControls.js' %}"></script>s
+<script src="{% static 'dlabsite/js/OrbitControls.js' %}"></script>
+<script src="{% static 'dlabsite/js/colordict.js' %}"></script>
 <script>
 
 // Setup renderer
@@ -125,6 +117,17 @@ controls.autoRotate = true;
 controls.enablePan = false;
 controls.enableKeys = false;
 
+// Setup raycaster
+var raycaster = new THREE.Raycaster();
+
+// Track mouse
+var mouse = new THREE.Vector2();
+function onMouseMove(event) {
+    mouse.x = (event.clientX/$('.main-block').width())*2-1;
+    mouse.y = -(event.clientY/$('.main-block').height())*2+1;
+}
+window.addEventListener('mousemove',onMouseMove,false);
+
 // load geometries
 var loader = new THREE.JSONLoader();
 var left_pial; var right_pial;
@@ -160,6 +163,17 @@ function render_loop() {
 
 // Render function
 function render() {
+    raycaster.setFromCamera(mouse,camera);
+    var intersects = raycaster.intersectObjects(scene.children);
+    try {
+        var facecolor = intersects[0].face.vertexColors[0];
+        var red = Math.round(facecolor['r']*255);
+        var green = Math.round(facecolor['g']*255);
+        var blue = Math.round(facecolor['b']*255);
+        var region = colortable[red][green][blue].replace('ctx-lh-','').replace('ctx_lh_','');
+        $('.region-display').html(region);
+    }
+    catch (err) {}
     renderer.render(scene,camera);
 }
 // render background first
@@ -174,10 +188,12 @@ $(window).resize(function() {
 
 // enable/controls on click
 var state = 0;
+$('.region-display').hide();
 $("#interact").click(function(){
     if (state == 0) {
         $("#interact").html('back');
         $('.title-text').hide();
+        $('.region-display').show();
         controls.autoRotate = false;
         controls.startagain();
         state = 1;
@@ -185,10 +201,10 @@ $("#interact").click(function(){
     else if (state == 1) {
         $("#interact").html('interact');
         $('.title-text').show();
+        $('.region-display').hide();
         controls.dispose();
         state = 0;
     }
 });
-
 </script>
 {% endblock %}

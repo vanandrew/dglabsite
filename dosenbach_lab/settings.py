@@ -24,11 +24,11 @@ SECRET_KEY = '*q7bkc@+1(x*i-=mi77k4%!%!(($-#pw5#g0x4@&cywod7qagl'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-if DEBUG == False:
+if DEBUG:
+    THUMBNAIL_DEBUG = True
+else:
     SECURE_CONTENT_TYPE_NOSNIFF = True
     SECURE_SSL_REDIRECT = True
-else:
-    THUMBNAIL_DEBUG = True
 ALLOWED_HOSTS = ['greenelab.wustl.edu','127.0.0.1','localhost']
 
 # Application definition
@@ -87,12 +87,6 @@ TEMPLATES = [
         },
     },
 ]
-
-# Settings for django wiki
-#SITE_ID = 1
-#WIKI_ACCOUNT_HANDLING = True
-#WIKI_ACCOUNT_SIGNUP_ALLOWED = True
-#LOGIN_REDIRECT_URL = reverse_lazy('wiki:get', kwargs={'path': ''})
 
 WSGI_APPLICATION = 'dosenbach_lab.wsgi.application'
 
