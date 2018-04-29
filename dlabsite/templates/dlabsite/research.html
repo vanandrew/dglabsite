@@ -1,10 +1,14 @@
 {% extends "dlabsite/base.html" %}
 {% load staticfiles %}
 
+{% block head %}
+<link href="{% static 'dlabsite/css/research.css' %}" rel="stylesheet">
+{% endblock %}
+
 {% block content %}
 <div class="grid-container full grid-frame">
     <div class="grid-x">
-        <div class="cell small-12 parallax research-cover" style="color:white;">
+        <div class="cell small-12 parallax research-cover block1" style="color:white;">
             <div class="grid-y grid-frame">
                 <div class="cell small-5"></div>
                 <div class="cell small-2">
@@ -29,7 +33,7 @@
                 multimodal MRI techniques to study typically and atypically
                 developing populations to accomplish our goals.</p>
         </div>
-        <div class="cell small-12 parallax research-img1" style="color:white;">
+        <div class="cell small-12 parallax research-img1 block2" style="color:white;">
             <div class="grid-y grid-frame">
                 <div class="cell small-5"></div>
                 <div class="cell small-2">
@@ -49,7 +53,7 @@
                 capture cortico-subcortical functional connectivity and have
                 applied this approach to study its development.</p>
         </div>
-        <div class="cell small-12 parallax research-img2" style="color:white;">
+        <div class="cell small-12 parallax research-img2 block3" style="color:white;">
             <div class="grid-y grid-frame">
                 <div class="cell small-5"></div>
                 <div class="cell small-2">
@@ -68,7 +72,7 @@
                 unknown characteristics with the goal of improving outcomes for
                 children.</p>
         </div>
-        <div class="cell small-12 parallax research-img3" style="color:white;">
+        <div class="cell small-12 parallax research-img3 block4" style="color:white;">
             <div class="grid-y grid-frame">
                 <div class="cell small-5"></div>
                 <div class="cell small-2">
@@ -87,7 +91,7 @@
                 network organization, gaining insight into the distinctiveness
                 that makes up each individual.</p>
         </div>
-        <div class="cell small-12 parallax research-img1" style="color:white;">
+        <div class="cell small-12 parallax research-img1 block5" style="color:white;">
             <div class="grid-y grid-frame">
                 <div class="cell small-5"></div>
                 <div class="cell small-2">
@@ -106,7 +110,7 @@
                 developmental trajectory with the goal of making clinically
                 relevant predictions about individual children with TS.</p>
         </div>
-        <div class="cell small-12 parallax research-img2" style="color:white;">
+        <div class="cell small-12 parallax research-img2 block6" style="color:white;">
             <div class="grid-y grid-frame">
                 <div class="cell small-5"></div>
                 <div class="cell small-2">
@@ -131,4 +135,37 @@
         </div>
     </div>
 </div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+function bgscroll(element,initialpos,percentmov) {
+    $(document).ready(function(){
+        var ypos = initialpos;
+        let inittop = document.documentElement.scrollTop || document.body.scrollTop;
+        $(element).css("background-position-y",`${inittop*percentmov+ypos}%`);
+        $(document).bind('wheel',(event) => {
+            let delta = event.originalEvent.deltaY;
+            let scrolltype = ((delta>0)?'down':'up');
+            let top = document.documentElement.scrollTop || document.body.scrollTop;
+            // decision
+            if (scrolltype == 'down') {
+                if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) { return };
+            }
+            if (scrolltype == 'up') {
+                if (top == 0) { return };
+            }
+            let move = percentmov*top;
+            let newypos = ypos + move;
+            $(element).css("background-position-y",`${newypos}%`);
+        });
+    });
+}
+bgscroll('.block1',50,0.05);
+bgscroll('.block2',30,0.05);
+bgscroll('.block3',-30,0.05);
+bgscroll('.block4',-80,0.05);
+bgscroll('.block5',-190,0.05);
+bgscroll('.block6',-260,0.05);
+</script>
 {% endblock %}

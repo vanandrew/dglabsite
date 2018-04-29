@@ -1,0 +1,29 @@
+.parallax {
+  /*Set a specific height*/
+  min-height: 100vh;
+  /*Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.research-text {
+  padding: 20px 0px;
+}
+
+.research-cover {
+  background-image: url("../img/research_cover.jpg");
+}
+
+.research-img1 {
+  background-image: url("../img/img1.jpg");
+}
+
+.research-img2 {
+  background-image: url("../img/img2.jpg");
+}
+
+.research-img3 {
+  background-image: url("../img/img3.jpg");
+}
