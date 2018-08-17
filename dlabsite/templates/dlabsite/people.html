@@ -124,9 +124,11 @@ class="active"
 				// Current members checkbox active
 				if ($('#current').prop('checked')) {
 					$(this).show();
+					$(this).children().css('opacity','1');
 				}
 				else {
-					$(this).hide();
+					$(this).hide();	
+					$(this).children().css('opacity','0');
 				}
 			}
 			// if member is alumni
@@ -134,9 +136,11 @@ class="active"
 				// Past members checkbox active
 				if ($('#past').prop('checked')) {
 					$(this).show();
+					$(this).children().css('opacity','1');
 				}
 				else {
 					$(this).hide();
+					$(this).children().css('opacity','0');
 				}
 			}
 		});
