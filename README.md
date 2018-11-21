@@ -1,6 +1,6 @@
-# Dosenbach and Greene Lab Website Code
+# Dosenbach Website Code
 
-This is the backend for the Dosenbach and Greene Lab websites.
+This is the backend for the Dosenbach Lab website.
 
 #### Folder Structure
 
@@ -10,7 +10,7 @@ This is the backend for the Dosenbach and Greene Lab websites.
 
 #### Overview
 
-The code in this repository uses the [django](https://www.djangoproject.com/) framework. Please read the django documentation for a better overview of the django framework.
+The code in this repository uses the [django](https://www.djangoproject.com/) framework.
 
 The main files of interest are:  
 * admin.py: contains the definitions for each model in the admin panel
