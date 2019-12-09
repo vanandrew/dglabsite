@@ -28,7 +28,9 @@ def publications_page(request):
 #media
 def media_page(request):
     media = media_listing.objects.all().order_by('-date')
-    return render(request, 'dlabsite/media.html', {'media': media})
+    dateobjs = media_listing.objects.dates('date','year',order='DESC')
+    years = [date.year for date in dateobjs]
+    return render(request, 'dlabsite/media.html', {'media': media, 'years': years})
 
 # data
 def data_page(request):
