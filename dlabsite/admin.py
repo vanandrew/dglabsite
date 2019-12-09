@@ -1,7 +1,7 @@
 from django.contrib import admin
 from .models import (lab_member, publication,
     publication_link, job_listing, current_study,
-    data_listing, software_listing)
+    media_listing, data_listing, software_listing)
 
 # admin for lab member model
 class labmemberadmin(admin.ModelAdmin):
@@ -74,6 +74,22 @@ class currentstudyadmin(admin.ModelAdmin):
     search_fields = ('title',)
     save_as = True
 
+class medialistingadmin(admin.ModelAdmin):
+    ordering = ('-date',)
+    fieldsets = (
+        ('Media Listing', {
+            'fields': (
+                'title',
+                'description',
+                'link',
+                'image',
+                'date',
+            )
+        }),
+    )
+    search_fields = ('title', 'date',)
+    save_as = True
+
 class datalistingadmin(admin.ModelAdmin):
     ordering = ('title',)
     fieldsets = (
@@ -109,6 +125,7 @@ admin.site.register(lab_member, labmemberadmin)
 admin.site.register(publication, publicationadmin)
 admin.site.register(job_listing, joblistingadmin)
 admin.site.register(current_study, currentstudyadmin)
+admin.site.register(media_listing, medialistingadmin)
 admin.site.register(data_listing, datalistingadmin)
 admin.site.register(software_listing, softwarelistingadmin)
 

@@ -82,6 +82,9 @@
 						<li {% block publications %}{% endblock %}>
 							<a href="{% url 'dlabsite:publications' %}" id="publications">publications</a>
 						</li>
+						<li {% block media %}{% endblock %}>
+							<a href="{% url 'dlabsite:media' %}" id="media">media</a>
+						</li>
 						<li {% block data %}{% endblock %}>
 							<a href="{% url 'dlabsite:data' %}" id="data">data</a>
 						</li>

@@ -7,6 +7,7 @@ urlpatterns = [
     url(r'^lab_members', views.people_page, name='people'),
     url(r'^research', views.research_page, name='research'),
     url(r'^publications', views.publications_page, name='publications'),
+    url(r'^media', views.media_page, name='media'),
     url(r'^data', views.data_page, name='data'),
     url(r'^software', views.software_page, name='software'),
     url(r'^directions', views.directions_page, name='directions'),

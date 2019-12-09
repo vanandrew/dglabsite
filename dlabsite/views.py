@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from .models import (lab_member, publication, job_listing,
-    current_study, data_listing, software_listing)
+    media_listing, current_study, data_listing, software_listing)
 from datetime import datetime
 
 # homepage
@@ -24,6 +24,11 @@ def publications_page(request):
     dateobjs = publication.objects.dates('date','year',order='DESC')
     years = [date.year for date in dateobjs]
     return render(request, 'dlabsite/publications.html', {'publications': publications, 'years': years})
+
+#media
+def media_page(request):
+    media = media_listing.objects.all().order_by('-date')
+    return render(request, 'dlabsite/media.html', {'media': media})
 
 # data
 def data_page(request):

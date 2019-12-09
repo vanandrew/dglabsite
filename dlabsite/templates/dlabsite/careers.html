@@ -33,19 +33,25 @@ class="active"
 		</div>
 	</div>
 	<br>
-	{% for job in jobpostings %}
-	<div class="row">
-		<div class="panel panel-default" style="visibility: hidden;">
-			<div class="panel-heading"><h4>{{job.title}} - {{job.jobid}}</h4></div>
-			<div class="panel-body">
-				{% autoescape off %}
-				{{job.description}}
-				{% endautoescape %}
-				<a class="btn btn-primary" target="_blank" href="https://jobs.wustl.edu/psc/APPLHRMS/EMPLOYEE/HRMS/c/HRS_HRAM.HRS_APP_SCHJOB.GBL?Page=HRS_APP_JBPST&REL_ACTION=Yes&SiteId=1&HRS_JO_PST_TYPE=E&HRS_JOB_OPENING_ID={{job.jobid}}&HRS_JO_PST_SEQ=1">Apply Here</a>
+	{% if jobpostings %}
+		{% for job in jobpostings %}
+		<div class="row">
+			<div class="panel panel-default" style="visibility: hidden;">
+				<div class="panel-heading"><h4>{{job.title}} - {{job.jobid}}</h4></div>
+				<div class="panel-body">
+					{% autoescape off %}
+					{{job.description}}
+					{% endautoescape %}
+					<a class="btn btn-primary" target="_blank" href="https://jobs.wustl.edu/psc/APPLHRMS/EMPLOYEE/HRMS/c/HRS_HRAM.HRS_APP_SCHJOB.GBL?Page=HRS_APP_JBPST&REL_ACTION=Yes&SiteId=1&HRS_JO_PST_TYPE=E&HRS_JOB_OPENING_ID={{job.jobid}}&HRS_JO_PST_SEQ=1">Apply Here</a>
+				</div>
 			</div>
 		</div>
-	</div>
-	{% endfor %}
+		{% endfor %}
+	{% else %}
+		<div class="col-lg-12 text-center">
+			<h3>There are no current job postings. Please check back soon, we'll be adding positions for a Postdoctoral Researcher and a Research Assistant.</h3>
+		</div>
+	{% endif %}
 </div>
 {% endblock %}
 
