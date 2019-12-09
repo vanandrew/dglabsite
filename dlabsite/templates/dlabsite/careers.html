@@ -25,15 +25,15 @@ class="active"
 		</div>
 	</section>
 </div>
-<div class="container" style="min-height: 700px;">
-	<div class="row">
-		<div class="col-lg-12 text-center">
-			<p>The job links below are for <b>external (Non-WashU) applicants only</b>. If you are already a WashU employee,
-				please apply <a target="_blank" href="https://wuissrv20.wustl.edu/psp/HRMS/EMPLOYEE/HRMS/c/HRS_HRAM_EMP.HRS_APP_SCHJOB.GBL?FOCUS=Employee&FolderPath=PORTAL_ROOT_OBJECT.CO_EMPLOYEE_SELF_SERVICE.HC_HRS_CE_GBL&IsFolder=false&IgnoreParamTempl=FolderPath%2cIsFolder">here</a>.</p>
+{% if jobpostings %}
+	<div class="container" style="min-height: 700px;">
+		<div class="row">
+			<div class="col-lg-12 text-center">
+				<p>The job links below are for <b>external (Non-WashU) applicants only</b>. If you are already a WashU employee,
+					please apply <a target="_blank" href="https://wuissrv20.wustl.edu/psp/HRMS/EMPLOYEE/HRMS/c/HRS_HRAM_EMP.HRS_APP_SCHJOB.GBL?FOCUS=Employee&FolderPath=PORTAL_ROOT_OBJECT.CO_EMPLOYEE_SELF_SERVICE.HC_HRS_CE_GBL&IsFolder=false&IgnoreParamTempl=FolderPath%2cIsFolder">here</a>.</p>
+			</div>
 		</div>
-	</div>
-	<br>
-	{% if jobpostings %}
+		<br>
 		{% for job in jobpostings %}
 		<div class="row">
 			<div class="panel panel-default" style="visibility: hidden;">
@@ -47,12 +47,14 @@ class="active"
 			</div>
 		</div>
 		{% endfor %}
-	{% else %}
-		<div class="col-lg-12 text-center">
-			<h3>There are no current job postings. Please check back soon, we'll be adding positions for a Postdoctoral Researcher and a Research Assistant.</h3>
-		</div>
-	{% endif %}
-</div>
+	</div>
+{% else %}
+	<div class="col-lg-12 text-center">
+		<h3>Coming Soon:<br>Job postings for Postdoctoral Researcher and Research Assistant.</h3>
+		<h3><a href="mailto:nil-dosenbach-lab@email.wustl.edu">Email us</a> if you're interested.</h3>
+		<br>
+	</div>
+{% endif %}
 {% endblock %}
 
 {% block scripts %}
