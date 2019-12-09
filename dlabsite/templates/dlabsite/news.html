@@ -1,0 +1,65 @@
+{% extends "dlabsite/base.html" %}
+{% load staticfiles %}
+
+{% block description %}
+"In the media. News and press releases for Dosenbach Lab."
+{% endblock %}
+
+{% block title %}
+News
+{% endblock %}
+
+{% block news %}
+class="active"
+{% endblock %}
+
+{% block content %}
+<div class="container container-nav-clear animated fadeIn">
+	<section class="section">
+		<div class="row">
+			<div class="col-lg-8 col-lg-offset-2 text-center">
+				<h2>News</h2>
+				<hr>
+				<p class="sub-caption">In the news.</p>
+			</div>
+		</div>
+	</section>
+</div>
+<div class="container" style="min-height: 700px;">
+	{% for listing in news %}
+	<div class="row">
+		<div class="panel panel-default" style="visibility: hidden;">
+			<div class="panel-body">
+				<div class="col-md-3 col-md-offset-0 col-xs-4 col-xs-offset-4 vcenter">
+					{% if listing.image.url != '' %}
+					<a href="{{listing.link}}"><img class="img-responsive center-block" src="{{listing.image.url}}" width=300px></a>
+					{% endif %}
+				</div><!--
+				--><div class="col-md-9 col-md-offset-0 col-xs-12 col-xs-offset-0 vcenter">
+					<p><h4>{{listing.title}}</h4></p>
+					{% autoescape off %}
+					{{listing.description}}
+					{% endautoescape %}
+				</div>
+			</div>
+		</div>
+	</div>
+	{% endfor %}
+</div>
+{% endblock %}
+
+{% block scripts %}
+<!-- Scroll Reveal-->
+<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+<script>
+	//Setup scroll reveal
+	sr = ScrollReveal();
+
+	// scroll reveal
+	sr.reveal('.panel',{
+  		reset: false,
+		duration: 1000,
+		viewFactor: 0.2,
+	});
+</script>
+{% endblock %}

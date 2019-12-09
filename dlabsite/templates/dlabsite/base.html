@@ -82,8 +82,8 @@
 						<li {% block publications %}{% endblock %}>
 							<a href="{% url 'dlabsite:publications' %}" id="publications">publications</a>
 						</li>
-						<li {% block media %}{% endblock %}>
-							<a href="{% url 'dlabsite:media' %}" id="media">media</a>
+						<li {% block news %}{% endblock %}>
+							<a href="{% url 'dlabsite:news' %}" id="news">news</a>
 						</li>
 						<li {% block data %}{% endblock %}>
 							<a href="{% url 'dlabsite:data' %}" id="data">data</a>
@@ -139,7 +139,7 @@
 			navbar_click('#people','{% url 'dlabsite:people' %}','body>div,body>section');
 			navbar_click('#research','{% url 'dlabsite:research' %}','body>div,body>section');
 			navbar_click('#publications','{% url 'dlabsite:publications' %}','body>div,body>section');
-			navbar_click('#media', '{% url 'dlabsite:media' %}','body>div,body>section');
+			navbar_click('#news', '{% url 'dlabsite:news' %}','body>div,body>section');
 			navbar_click('#data','{% url 'dlabsite:data' %}','body>div,body>section');
 			navbar_click('#software','{% url 'dlabsite:software' %}','body>div,body>section');
 			navbar_click('#wiki','{% url 'wiki:root' %}','body>div,body>section');

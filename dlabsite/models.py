@@ -191,34 +191,34 @@ class current_study(models.Model):
     def __unicode__(self):
         return self.title
 
-# Create class for media listing
-class media_listing(models.Model):
+# Create class for news listing
+class news_listing(models.Model):
     class Meta:
-        verbose_name = "Media Listing"
+        verbose_name = "News Listing"
 
-    # Create title for media listing
+    # Create title for news listing
     title = models.CharField(
         max_length = 350,
         verbose_name = "Title"
     )
 
-    # Create description for media listing
+    # Create description for news listing
     description = models.TextField(
         blank = True,
         null = True,
         verbose_name = "Description"
     )
 
-    # Create link to media listing
+    # Create link to news listing
     link = models.CharField(
         max_length = 1000,
         null = True,
         verbose_name = "Link"
     )
 
-    # Image for media listing
+    # Image for news listing
     image = models.ImageField(
-        upload_to='media_listing_images/',
+        upload_to='news_listing_images/',
         null = True,
         blank = True,
         verbose_name = "Image"
