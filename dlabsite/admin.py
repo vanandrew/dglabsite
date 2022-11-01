@@ -52,6 +52,7 @@ class joblistingadmin(admin.ModelAdmin):
             'fields': (
                 'title',
                 'jobid',
+                'joburl',
                 'description',
             )
         }),

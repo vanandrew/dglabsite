@@ -144,6 +144,14 @@ class job_listing(models.Model):
     jobid = models.IntegerField(
         verbose_name = "Job ID#"
     )
+    
+    # Create Job URL
+    joburl = models.CharField(
+        max_length = 1000,
+        verbose_name = "Job URL",
+        null = True,
+        blank = True
+    )
 
     # Create Job Description
     description = models.TextField(
